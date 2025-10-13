@@ -1,7 +1,7 @@
 ---
 name: Padrão de Projeto
 about: Template de issue para padrões de projeto
-title: Título da Issue
+title: ''
 labels: ''
 assignees: ''
 
