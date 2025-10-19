@@ -10,9 +10,9 @@ O padrão Factory Method propõe a criação de objetos em uma superclasse.
 
 O padrão Factory Method surgiu a partir de um problema onde havia uma classe sendo utilizada em grande proporção em um sistema. Entretando, após a expansão do sistema, a adição de classes semelhantes a ela gera a necessidade de revisão e possível alteração em todo o código da aplicação.
 
-A fim de ter uma explicação mais lúdica e didática, segue a explicação que o site [Refactoring Guru](https://refactoring.guru/) apresenta para explicar a problemática que incentivou a criação do padrão:
+<!-- A fim de ter uma explicação mais lúdica e didática, segue a explicação que o site [Refactoring Guru](https://refactoring.guru/) apresenta para explicar a problemática que incentivou a criação do padrão:
 
-[Adicinar explicacao]
+[Adicinar explicacao] -->
 
 ### Vantagens
 
@@ -28,15 +28,41 @@ A fim de ter uma explicação mais lúdica e didática, segue a explicação que
 
 ## Aplicação no projeto
 
-- explicação de como utilizamos o padrão, insights, discussoes interessantes, aprofundamento em partes específicas do diagrama
+<!-- - explicação de como utilizamos o padrão, insights, discussoes interessantes, aprofundamento em partes específicas do diagrama
 - **comentar sobre ferramentas utilizadas, linguagens, fazer ligações com entregas anteriores!!**
-- pode criar novas seções aqui se necessário com ###, por exemplo: Dificuldades Encontradas pela equipe
+- pode criar novas seções aqui se necessário com ###, por exemplo: Dificuldades Encontradas pela equipe -->
+
+As integrantes responsáveis pelo padrão inicialmente estudaram sobre o padrão de projeto, Factory Method. Após isso, debateram por mensagens sobre como o padrão poderia ser implementado no projeto.
+
+Para a aplicação no projeto, foi decidido que ele seria utilizado no contexto de diferentes tipos de pedidos, nesse caso Pedidos para Retirada e Pedidos para Entrega, sendo possível a criação de novos tipos de pedidos posteriormente que será facilitada e menos propensa a erros.
+
+### Diagrama de Classes
+
+O diagrama foi criado levando em consideração o [Diagrama de Classes]() feito na segunda entrega e os debates entre as integrantes responsáveis pelo padrão de projeto.
+
+[Foto diagrama]()
+
+Foram criadas duas interfaces:
+- FabricaDePedidos: feita para padronizar um método comum entre todas as Fabricas de Pedidos. Dessa forma, arquivos que chamam o método serão capazes de chamá-lo sem precisar saber qual é o tipo do pedido.
+
+- Pedido: feita para padronizar alguns métodos comuns entre todas os tipos de Pedidos. Dessa forma, arquivos que chamam os métodos serão capazes de chamá-lo sem precisar saber qual é o tipo do pedido.
+
+### Implementação
+
+A implementação do padrão do projeto foi baseada no Diagrama de Classes citado anteriormente.
+
+#### Interfaces
+
+#### Fábricas
+
+#### Classes Pedido
 
 ## Quadro de Participações
 
 | **Membro da equipe** | **Função** |
 | :------------- | :--------- |
-| [Ana Clara](https://github.com/anabborges) | Documentação da Introdução e do Factory Method |
+| [Ana Clara](https://github.com/anabborges) | Documentação da Introdução e do Factory Method, Criação do Diagrama de Classes |
+| [Gabriela](https://github.com/gaubiela) | Documentação da Introdução e do Factory Method, Revisão e Ajustes no Diagrama de Classes |
 
 ## Referências
 
