@@ -6,27 +6,24 @@ O Prototype é um padrão de projeto criacional que permite copiar objetos exist
 
 ## Padrão
 
-O padrão Prototype parte da ideia de manter um ou mais objetos “protótipos” predefinidos, que servem como base para a criação de novas instâncias. Em vez de usar new, o cliente chama o método clone() no protótipo, que retorna uma cópia fiel — podendo ser cópia rasa (shallow copy) ou cópia profunda (deep copy) dependendo do nível de duplicação necessário.
+O padrão Prototype parte da ideia de manter um ou mais objetos “protótipos” predefinidos, que servem como base para a criação de novas instâncias. Em vez de usar new, o cliente chama o método clone() no protótipo, que retorna uma cópia — podendo ser cópia rasa (shallow copy) ou cópia profunda (deep copy) dependendo do nível de duplicação necessário.
 
 Este padrão é especialmente aplicado em sistemas que criam objetos de forma repetitiva com pequenas variações, ou em contextos onde o custo de inicialização via construtor é elevado. Além disso, o Prototype promove maior flexibilidade, pois o cliente não precisa conhecer a classe concreta, apenas a interface de clonagem.
 
 ### Vantagens
-- Desempenho: Evita recriações complexas, economizando tempo e recursos.
+- **Desempenho:** Evita recriações complexas, economizando tempo e recursos.
 
-- Baixo acoplamento: O cliente depende apenas da interface clone(), e não do construtor.
+- **Baixo acoplamento:** O cliente depende apenas da interface clone(), e não do construtor.
 
-- Flexibilidade dinâmica: Permite registrar, duplicar e modificar protótipos em tempo de execução.
-
-- explicação do padrão
-- pode criar novas seções aqui se necessário com ###, por exemplo: Vantagens, Desvantagens
+- **Flexibilidade dinâmica:** Permite registrar, duplicar e modificar protótipos em tempo de execução.
 
 ### Desvantagens
 
-- Complexidade com objetos compostos: Exige atenção ao escolher entre cópia rasa ou profunda.
+- **Complexidade com objetos compostos:** Exige atenção ao escolher entre cópia rasa ou profunda.
 
-- Objetos com recursos exclusivos: Itens como conexões, identificadores únicos ou arquivos podem não ser seguros de clonar diretamente.
+- **Objetos com recursos exclusivos:** Itens como conexões, identificadores únicos ou arquivos podem não ser seguros de clonar diretamente.
 
-- Legibilidade reduzida: Quando mal utilizado, pode dificultar o entendimento do fluxo de criação.
+- **Legibilidade reduzida:** Quando mal utilizado, pode dificultar o entendimento do fluxo de criação.
 
 ## Aplicação no projeto
 
