@@ -50,6 +50,8 @@ Para o GOF criacional Abstract Factory foi escolhido trabalhar com a classe de P
 
 Dessa forma foi possível criar um conjunto novo de 12 classes que buscam dividir o grau de funções, e com isso diminuir o grau de acoplamento da classe Pagamento. Para isso, foi escolhido que pagamento se tornaria uma fábrica abstrata, sendo agora representado através de uma interface que possui três diferentes métodos, um focado na validação do pagamento, outro focado em processar o pagamento e um terceiro para gerar os comprovantes. 
 
+Além disso foi utilizado um record para conter os dados do cartão de crédito, os quais são utilizados nas classes ProcessadorPagamentoCartao e ValidadorPagamentoCartao. Os records são um tipo especial de classes do Java que atuam como operadores transparentes para dados imutáveis. Como os dados de um cartão de crédito, como o CVV e a data de validade, não podem ser alterados, ao utilizar esse tipo de classe é possível garantir que esses dados não sejam alterados.
+
 Com isso, é possível ter produtos diferenciados para cada um desses três métodos, neste caso, foi representado no diagrama e em código produtos que buscam aplicar esses métodos para as formas de pagamento Pix e cartão de crédito. Mas isso pode ser expadido para novos métodos de pagamento como cartão de débito, dinheiro e através de cupons de desconto.
 
 Dessa forma, o novo diagrama contendo a refatoração da classe Pagamento pode ser visto na figura abaixo.
@@ -73,7 +75,7 @@ public interface GeradorComprovante {
 ```
 public interface ProcessadorPagamento {
 	
-	ResultadoTransacao processar();
+	boolean processar();
 
 }
 ```
@@ -100,45 +102,51 @@ public interface PagamentoFactory {
 }
 ```
 
-### Classe PagamentoCartaoFactory
+### Classe PagamentoCartaoFactory (Concrete Factory)
 
 ```
 public class PagamentoCartaoFactory implements PagamentoFactory {
 
     @Override
     public ValidadorPagamento criarValidador() {
+    	System.out.println("Criando validador de cartão...");
         return new ValidadorPagamentoCartao();
     }
 
     @Override
     public ProcessadorPagamento criarProcessador() {
+    	System.out.println("Criando processador de pagamento de cartão...");
         return new ProcessadorPagamentoCartao();
     }
 
     @Override
     public GeradorComprovante criarGeradorComprovante() {
+    	System.out.println("Criando gerador de comprovante de cartão...");
         return new GeradorComprovanteCartao();
     }
 }
 ```
 
-### Classe PagamentoPixFactory
+### Classe PagamentoPixFactory (Concrete Factory)
 
 ```
 public class PagamentoPixFactory implements PagamentoFactory {
 
     @Override
     public ValidadorPagamento criarValidador() {
+    	System.out.println("Criando validador de pix...");
         return new ValidadorPagamentoPix();
     }
 
     @Override
     public ProcessadorPagamento criarProcessador() {
+    	System.out.println("Criando processador de pagamento pix...");
         return new ProcessadorPagamentoPix();
     }
 
     @Override
     public GeradorComprovante criarGeradorComprovante() {
+    	System.out.println("Criando gerador de comprovante de pix...");
         return new GeradorComprovantePix();
     }
 }
@@ -147,11 +155,14 @@ public class PagamentoPixFactory implements PagamentoFactory {
 ### Classe GeradorComprovanteCartao
 
 ```
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class GeradorComprovanteCartao implements GeradorComprovante {
 	
-	int idTransacao;
-	double valorAprovado;
-	LocalDateTime dataHora;
+	private int idTransacao;
+	private double valorAprovado;
+	private LocalDateTime dataHora;
 	
     @Override
     public String gerar() {
@@ -164,9 +175,14 @@ public class GeradorComprovanteCartao implements GeradorComprovante {
 ### Classe GeradorComprovantePix
 
 ```
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class GeradorComprovantePix implements GeradorComprovante {
 	
-	int idTransacaoPix;
+	private int idTransacaoPix;
+	private double valorAprovado;
+	private LocalDateTime dataHora;
 	
     @Override
     public String gerar() {
@@ -174,7 +190,6 @@ public class GeradorComprovantePix implements GeradorComprovante {
         return "--- Comprovante Pix ---\nID Transação: 12345\nValor: R$ 10,00";
     }
 }
-
 ```
 
 ### Classe ProcessadorPagamentoCartao
@@ -183,16 +198,59 @@ public class GeradorComprovantePix implements GeradorComprovante {
 public class ProcessadorPagamentoCartao implements ProcessadorPagamento {
 	
 	double valor;
-	Cartao dadosCartao;
-	String getawayAPIKey;
+	private DadosCartao dadosCartao;
+	private String getawayAPIKey;
 	
     @Override
-    public ResultadoTransacao processar() {
-        System.out.println("Processando pagamento via Cartão de Crédito com o Gateway...");
-        ResultadoTransacao res = new ResultadoTransacao();
-        res.foiAprovado = true;
-        res.mensagem = "Pagamento com cartão aprovado!";
-        return res;
+    public boolean processar() {
+    	System.out.println("Processando dados da transação...");
+    	conectarGateway();
+    	enviarTransacao();
+    	return true;
+    }
+    
+    private void conectarGateway() {
+    	System.out.println("Conectando com gateway...");
+    }
+    
+    private String enviarTransacao() {
+    	System.out.println("Enviando dados da transação...");
+    	return "Dados da transação enviados com sucesso.";
+    }
+}
+```
+
+### Classe ValidadorPagamentoCartao
+
+```
+
+public class ValidadorPagamentoCartao implements ValidadorPagamento {
+	
+	private DadosCartao dadosCartao;
+	
+    @Override
+    public boolean validar() {
+        System.out.println("Validando dados do Cartão de Crédito...");
+        validarNumeroCartao();
+        validarValidade();
+        validarCodigoDeSeguranca();
+        return true;
+    }
+    
+    private boolean validarNumeroCartao() {
+    	System.out.println("Iniciando validação do número do cartão de crédito...");
+    	return true;
+    	
+    }
+    
+    private boolean validarValidade() {
+    	System.out.println("Iniciando validação da validade do cartão...");
+    	return true;
+    }
+    
+    private boolean validarCodigoDeSeguranca() {
+    	System.out.println("Iniciando validação do código de segurança do cartão...");
+    	return true;
     }
 }
 ```
@@ -202,32 +260,11 @@ public class ProcessadorPagamentoCartao implements ProcessadorPagamento {
 ```
 public class ProcessadorPagamentoPix implements ProcessadorPagamento {
 	
-	String DadosQRCode;
+	private String DadosQRCode;
 	
     @Override
-    public ResultadoTransacao processar() {
-        System.out.println("Processando pagamento via Pix com o Gateway...");
-        ResultadoTransacao res = new ResultadoTransacao();
-        res.foiAprovado = true;
-        res.mensagem = "Pagamento com PIX aprovado!";
-        return res;
-    }
-}
-```
-
-### Classe ValidadorPagamentoCartao
-
-```
-public class ValidadorPagamentoCartao implements ValidadorPagamento {
-	
-	int numeroCartao;
-	String nomeCartao;
-	String validadeCartao;
-	int codigoDeSeguranca;
-	
-    @Override
-    public boolean validar() {
-        System.out.println("Validando dados do Cartão de Crédito...");
+    public boolean processar() {
+        System.out.println("Processando pagamento via Pix...");
         return true;
     }
 }
@@ -238,27 +275,80 @@ public class ValidadorPagamentoCartao implements ValidadorPagamento {
 ```
 public class ValidadorPagamentoPix implements ValidadorPagamento {
 	
-	String chavePix;
+	private String chavePix;
 	
     @Override
     public boolean validar() {
         System.out.println("Validando dados do Pix...");
+        validarChave();
         return true;
     }
+    
+    private boolean validarChave() {
+    	System.out.println("Validando chave Pix...");
+    	return true;
+    }
 }
+```
+
+### Record Cartão
+
+**Nota:** Uma outra alternativa para não utilizar um registro para os dados do cartão seria transformar isso em uma classe, que também teria dados imutáveis (readOnly). Mas ao mesmo tempo, seria possível trazer os métodos da classe ValidadorPagamentoCartao que são responsáveis para validar dados separados do cartão, como CVV e data de validade, para dentro da classe do cartão de crédito. Pois, faz sentido que a própria classe deva saber que aqueles dados que ela possui são válidos ou não.
+
+```
+public record DadosCartao(String numero, String nomeTitular, String validade, String cvv) {}
+```
+
+### Classe de Testes
+
+Com base em todos os blocos de código desenvolvidos até agora é possível criar uma classe responsável por juntar todas essas classes e interfaces e implentar o sistema de pagamento do projeto. Para isso, são chamadas as classes das fábricas concretas PagamentoCartaoFactory e PagamentoPixFactory as quais são utilizadas em um método resposável por passar por todos os passos (Validação, Processamento e Geração de comprovante) do pagamento utilizando a respectiva fábrica como base.
+
+```
+public class Testes {
+
+    public static void realizarPagamento(PagamentoFactory factory) {
+        System.out.println("=====================================================");
+        System.out.println("Iniciando processo com a fábrica: " + factory.getClass().getSimpleName());
+
+        ValidadorPagamento validador = factory.criarValidador();
+        ProcessadorPagamento processador = factory.criarProcessador();
+        GeradorComprovante geradorComprovante = factory.criarGeradorComprovante();
+
+        if (validador.validar()) {
+            boolean transacaoAprovada = processador.processar();
+            if (transacaoAprovada) {
+                System.out.println("Transação aprovada :)");
+                geradorComprovante.gerar();
+            } else {
+                System.out.println("Transação recusada :(");
+            }
+        }
+        System.out.println("=====================================================\n");
+    }
+
+    public static void main(String[] args) {
+        PagamentoFactory fabricaCartao = new PagamentoCartaoFactory();
+        realizarPagamento(fabricaCartao);
+        PagamentoFactory fabricaPix = new PagamentoPixFactory();
+        realizarPagamento(fabricaPix);
+    }
+}
+
 ```
 
 ## Quadro de Participações
 
 | **Membro da equipe** | **Função** |
 | :------------- | :--------- |
-| [Luiz](https://github.com/luizfaria1989) | Documentação da Introdução e do Abstract Factory |
+| [Luiz](https://github.com/luizfaria1989) | Documentação da página, criação do diagrama e dos blocos de código. |
 
 ## Referências
 
 > GAMMA, Erich et al. Design patterns: elements of reusable object-oriented software. Reading, Mass.: Addison-Wesley, 1995.
 
 > REFACTORING GURU. Abstract Factory. Disponível em: https://refactoring.guru/design-patterns/abstract-factory.
+
+> OpenJDK. JEP 395: Records. Disponível em: https://openjdk.org/jeps/395.
 
 ## Histórico de Versões
 
@@ -267,3 +357,4 @@ public class ValidadorPagamentoPix implements ValidadorPagamento {
 | 14/10/2025 |  `0.1`   | Criação da página e documentação da introdução, abstract factory e vantagens/desvantagens | [`@Luiz`](https://github.com/luizfaria1989) | [`@`](https://github.com/) |   00/00/0000    |
 | 15/10/2025 |  `0.2`   | Adição do diagrama e dos códigos. | [`@Luiz`](https://github.com/luizfaria1989) | [`@`](https://github.com/) |   00/00/0000    |
 | 16/10/2025 |  `0.3`   | Incrementa documentação do padrão de projeto. | [`@Luiz`](https://github.com/luizfaria1989) | [`@`](https://github.com/) |   00/00/0000    |
+| 20/10/2025 |  `0.4`   | Incrementa diagrama de classes, blocos de código e documentação. | [`@Luiz`](https://github.com/luizfaria1989) | [`@`](https://github.com/) |   00/00/0000    |
