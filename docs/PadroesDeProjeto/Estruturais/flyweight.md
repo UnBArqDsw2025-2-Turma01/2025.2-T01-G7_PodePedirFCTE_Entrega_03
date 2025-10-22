@@ -8,9 +8,9 @@ O padrão Flyweight usa o compartilhamento para oferecer suporte eficiente a um 
 
 ## Flyweight
 
-O padrão Flyweight é apresentado no livro Design Patterns: Elements of Reusable Object-Oriented Software como um tipo de GOF estrutural. Para isso, ele vem como uma forma de separar uma classe em duas, a primeira contém o Flyweight, sendo utilizado como o objeto compartilhado que pode ser utilizado em múltiplos contextos simultâneamente, ele irá ser responsável por conter o estado intrínssico da objeto original. Por outro lado, vai existir uma outra classe, a qual será responsável por objetos que possuem o estado extrínssico do objeto original. O estado extrínssico depende do contexto que está sendo utilizado e portando não pode ser compartilhado.
+O padrão Flyweight é apresentado no livro Design Patterns: Elements of Reusable Object-Oriented Software como um tipo de GOF estrutural. Para isso, ele vem como uma forma de separar uma classe em duas, a primeira contém o Flyweight, sendo utilizado como o objeto compartilhado que pode ser utilizado em múltiplos contextos simultaneamente, ele irá ser responsável por conter o estado intrínssico do objeto original. Por outro lado, vai existir uma outra classe, a qual será responsável por objetos que possuem o estado extrínseco do objeto original. O estado extrínseco depende do contexto que está sendo utilizado e, portanto, não pode ser compartilhado.
 
-Um exemplo motivacional apresentado no livro de Gamma et. al. é com relação aos editores de documentos que utilizando linguagens orientadas a objetos. Ao invés de ter um conjunto enorme de objetos todos para representar a letra "A" por exemplo, é possível pegar as caracteríticas que estão comuns a todos os "A"s e adicioná-las a um Flyweight, o qual vai ser utilizado só uma vez. Já em cenários em que será preciso utilizar um "A" com algum acento, ou com alguma estilização, será usado o Flyweight como base, mas agora adicionando os estados extrínssicos a um novo objeto. Dessa forma, é possível economizar memória RAM, pois os dados do estado intríssico estarão representados na memória apenas uma única vez.
+Um exemplo motivacional apresentado no livro de Gamma et. al. é com relação aos editores de documentos que utilizam linguagens orientadas a objetos. Ao invés de ter um conjunto enorme de objetos todos para representar a letra "A", por exemplo, é possível pegar as características que estão comuns a todos os "A"s e adicioná-las a um Flyweight, o qual vai ser utilizado só uma vez. Já em cenários em que será preciso utilizar um "A" com algum acento, ou com alguma estilização, será usado o Flyweight como base, mas agora adicionando os estados extrínsecos a um novo objeto. Dessa forma, é possível economizar memória RAM, pois os dados do estado intrínseco estarão representados na memória apenas uma única vez.
 
 Além disso, no livro os autores discutem algumas aplicabilidades desse padrão de projeto. Para isso, o padrão Flyweight deve ser aplicado quando todos os itens abaixo forem verdade.
 
@@ -18,44 +18,59 @@ Além disso, no livro os autores discutem algumas aplicabilidades desse padrão 
 - Os custos de armazenamento são altos devido à grande quantidade de objetos;
 - A maioria dos estados dos objetos pode ser tornada extrínseca.
 - Muitos grupos de objetos podem ser substituídos por relativamente poucos objetos compartilhados uma vez que o estado extrínseco é removido.
-- A aplicação não depende da identidade do objeto. Como objetos flyweight
-podem ser compartilhados, os testes de identidade retornarão verdadeiro para objetos conceitualmente distintos.
+- A aplicação não depende da identidade do objeto. Como objetos flyweight podem ser compartilhados, os testes de identidade retornarão verdadeiro para objetos conceitualmente distintos.
 
 A fim de ter uma explicação mais lúdica e didática, segue a explicação que o site [Refactoring Guru](https://refactoring.guru/) apresenta para explicar a problemática que incentivou a criação do padrão:
 
 O site Refactoring Guru explica esse padrão utilizando um exemplo em que o programador está desenvolvendo um jogo de tiro, que possui um mapa e os jogadores podem atirar nos outros. Quando o programador testou o jogo no seu computador, ele estava funcionando normalmente, contudo, quando mandou para seu amigo testar, o programador descobriu que ele não estava funcionando de forma adequada, estava travando muito.
 
-Então, o progamador descobriu que o problema estava relacionado com o sistema de partículas do jogo. Cada partícula, como uma bala, um míssil ou um pedaço de estilhaços, era representada por um objeto separado contendo muitos dados. Assim, conforme o jogo ia se intensificando, o número de partículas aumentava e consequentemente muitos dados eram colocados na memória RAM. Isso foi que fez com que o jogo no computador do amigo do progamador travasse.
+Então, o programador descobriu que o problema estava relacionado com o sistema de partículas do jogo. Cada partícula, como uma bala, um míssil ou um pedaço de estilhaços, era representada por um objeto separado contendo muitos dados. Assim, conforme o jogo ia se intensificando, o número de partículas aumentava e consequentemente muitos dados eram colocados na memória RAM. Foi isso que fez com que o jogo no computador do amigo do programador travasse.
 
-Contudom, ao inspecionar a classe Particula, o programador notou que os campos de cor e sprite consomem muito mais memória do que outros campos. Mas além disso, é que esses dois campos armazenam dados quase idênticos em todas as partículas. Por exemplo, todas as balas têm a mesma cor e sprite. Outras partes do estado de uma partícula, como coordenadas, vetor de movimento e velocidade, são exclusivas de cada partícula. Afinal, os valores desses campos mudam ao longo do tempo. 
+Contudo, ao inspecionar a classe Particula, o programador notou que os campos de cor e sprite consomem muito mais memória do que outros campos. Além disso, é que esses dois campos armazenam dados quase idênticos em todas as partículas. Por exemplo, todas as balas têm a mesma cor e sprite. Outras partes do estado de uma partícula, como coordenadas, vetor de movimento e velocidade, são exclusivas de cada partícula. Afinal, os valores desses campos mudam ao longo do tempo. 
 
 Os dados que são constantes de um objeto são chamados de estado intrínseco. Ele vive dentro do objeto; outros objetos só podem lê-lo, não podem alterá-lo. O resto do estado do objeto, muitas vezes alterado “de fora” por outros objetos, é chamado de estado extrínseco.
 
-A partir desse conhecimento, é possivel entender o padrão Flyweight
+A partir desse conhecimento, é possível entender o padrão Flyweight.
+
+O GOF Flyweight sugere que o programador pare de armazenar o estado extrínseco dentro do objeto. Em vez disso, ele deve ser passado para métodos específicos que dependem dele. De forma que apenas o estado intrínseco permanece dentro do objeto, permitindo que ele possa ser reutilizado em diferentes contextos. Com isso, será preciso menos objetos, pois eles só diferem no estado intríseco, que tem menos variações que o estado extrínseco.
+
+O padrão Flyweight é composto por:
+
+* **Flyweight factory:** É uma fábrica que gerencia um grupo de flyweights existentes, de forma que ao utilizar a fábrica, uma outra classe pode chamá-la passando os pedaços de estado intríseco do flyweight desejado. A partir disso, a fábrica analisa os flyweights criados anteriormente e retorna um existente que corresponde aos critérios de pesquisa ou cria um novo se nada for encontrado.
+* **Flyweight:** É uma classe que contém a parte do estado do objeto original que pode ser compartilhada entre vários objetos. É essa classe que é responsável por armazenar o estado intrínseco do objeto original.
+* **Context:** É a classe responsável por conter o estado extrínseco, único em todos os objetos originais.
+
+A seguir, são discutidas as vantagens e desvantagens desse padrão de projeto apontadas pelo Refactoring Guru.
 
 ### Vantagens
 
-- **Economia de memória RAM:** Presumindo que o programa que está sendo rodado apresenta muitas objetos similares, ao aplicar o padrão flyweight é possível pegar todas as caraterísticas que são intríssicas dos objetos e representá-las apenas uma vez. 
+- **Economia de memória RAM:** Presumindo que o programa que está sendo rodado apresenta muitos objetos similares, ao aplicar o padrão flyweight é possível pegar todas as características que são intrínsecas dos objetos e representá-las apenas uma vez. 
 
 ### Desvantagens
 
 - **Troca de RAM por ciclos de CPU:** Pode ser que ao utilizar o padrão flyweight você esteja trocando a economia de RAM quando alguns dos dados de contexto precisam ser recalculados toda vez que alguém chama um método flyweight.
 
-- **Aumento de complexidade do código:** Ao utilizar o padrão flyweight o código que está sendo desenvolvido se torna mais complicado. Um dos exemplos que o Refectoring Guru dá para explicar essa desvantagem é com relação a separação de uma classe em duas, uma para os estados intrínssicos e outra para os estados extrínssicos, que a primeira vista pode parecer algo desncessário ou sem sentido.
+- **Aumento de complexidade do código:** Ao utilizar o padrão flyweight o código que está sendo desenvolvido se torna mais complicado. Um dos exemplos que o Refactoring Guru dá para explicar essa desvantagem é com relação a separação de uma classe em duas, uma para os estados intrísecos e outra para os estados extrínsecos, que à primeira vista pode parecer algo desnecessário ou sem sentido.
 
 
 ## Aplicação no projeto
 
-Para o GOF criacional Flyweight foi escolhido trabalhar com a classe de xxx
+Para o GOF criacional Flyweight foi escolhido trabalhar com a classe de Item do diagrama original.
 
 ![diagrama de classes](../../assets/classes.png)
 
+Neste caso, foi considerado que o Flyweight está sendo utilizado para diminuir a quantidade de memória RAM gasta pelo servidor para manter as diferentes instâncias da classe item, de forma que foi possível refatorar a classe em outras duas, uma para o estado intríseco, e outra para manter os dados do estado extríseco. Além disso, como o padrão pede o uso de uma fábrica para a criação dos objetos, foi criada também uma classe para ela, a ItemFactory.
+
+Ademais, é importante representar também uma classe para o carrinho de compras do usuário, que neste caso, será utilizada para armazenar os Itens de compra de um pedido. O diagrama pode ser visto a seguir.
+
 ![diagrama flyweight](../../assets/flyweight.png)
 
-Além disso, é possível também começar a representação do diagrama em forma de código. Para a construção do código foi escolhido utilizar Java com a IDE Eclipse, já para para a construção do diagrama foi escolhida a ferramenta Astah.
+Com isso, é possível também começar a representação do diagrama em forma de código. Para a construção do código foi escolhido utilizar Java com a IDE Eclipse, já para para a construção do diagrama foi escolhida a ferramenta Astah.
 
 
 ### Classe ItemFactory
+
+**Nota:** Na classe ItemFactory é adicionado o método getTotalDeItemTypesCriados que é utilizado para fins de debugging do código. Esse método tem como objetivo retornar a quantidade de Flyweights criados ao rodar o código, de forma que é possível garantir se o padrão está sendo aplicado de forma correta e com isso é possível minimizar a quantidade de objetos criados.
 
 ```
 import java.awt.*;
@@ -77,7 +92,7 @@ public class ItemFactory {
 		return result;
 	}
 	
-	// Função utilizada para fins de debbuging 
+	// Função utilizada para fins de debugging 
 	// Mostra a quantidade de flyweights criados
 	public static int getTotalDeItemTypesCriados() {
         return itensTypes.size();
@@ -174,7 +189,7 @@ public class Carrinho {
 
 ### Classe de Testes
 
-Com base em todos os blocos de código desenvolvidos até agora é possível criar uma classe responsável por juntar todas essas classes e interfaces e implentar o sistema de pagamento do projeto. Para isso, são chamadas as classes das fábricas concretas PagamentoCartaoFactory e PagamentoPixFactory as quais são utilizadas em um método resposável por passar por todos os passos (Validação, Processamento e Geração de comprovante) do pagamento utilizando a respectiva fábrica como base.
+Com base em todos os blocos de código desenvolvidos até agora é possível criar uma classe responsável por juntar todas essas classes para que o código seja testado.
 
 ```
 public class Testes {
@@ -186,7 +201,7 @@ public class Testes {
 		carrinho.adicionaItem("Hamburger", 29.90, "Sanduiche", 15, "hamburguer.png", 101, 1, "Normal", true);
 		carrinho.adicionaItem("Coca-Cola", 7.99, "Refrigerante", 2,"coca-cola.png", 205, 2, "Com limão", true);
 		
-		carrinho.adicionaItem("Hamburger", 29.90, "Sanduíche", 15, "harmburguer.png", 101, 1, "Sem salada", true);
+		carrinho.adicionaItem("Hamburger", 29.90, "Sanduiche", 15, "hamburguer.png", 101, 1, "Sem salada", true);
 		
 		carrinho.exibirCarrinho();
 		
@@ -208,12 +223,11 @@ public class Testes {
 
 > GAMMA, Erich et al. Design patterns: elements of reusable object-oriented software. Reading, Mass.: Addison-Wesley, 1995.
 
-> REFACTORING GURU. Abstract Factory. Disponível em: https://refactoring.guru/design-patterns/abstract-factory.
-
-> OpenJDK. JEP 395: Records. Disponível em: https://openjdk.org/jeps/395.
+> REFACTORING GURU. Flyweight. Disponível em: https://refactoring.guru/design-patterns/flyweight
 
 ## Histórico de Versões
 
 | **Data**       | **Versão** | **Descrição**                         | **Autor**                                      | **Revisor**                                      | **Data da Revisão** |
 | :--------: | :----: | :-------------------------------- | :----------------------------------------: | :----------------------------------------: | :-------------: |
 | 22/10/2025 |  `0.1`   | Criação da página. | [`@Luiz`](https://github.com/luizfaria1989) | [`@`](https://github.com/) |   00/00/0000    |
+| 22/10/2025 |  `0.2`   | Incrementa documentação da página. | [`@Luiz`](https://github.com/luizfaria1989) | [`@`](https://github.com/) |   00/00/0000    |
