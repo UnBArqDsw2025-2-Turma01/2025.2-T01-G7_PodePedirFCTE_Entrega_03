@@ -63,9 +63,196 @@ A implementação do padrão do projeto foi baseada no Diagrama de Classes citad
 
 #### Interfaces
 
+##### [FabricaDePedidos]()
+```
+export class FabricaDePedidos {
+  constructor() {
+    if (this.constructor === FabricaDePedidos) {
+      throw new Error("FabricaDePedidos é uma interface e não pode ser instanciada diretamente");
+    }
+  }
+
+  criarPedido(dados) {
+    throw new Error("Método criarPedido() deve ser implementado pelas fábricas concretas");
+  }
+}
+```
+
+##### [Pedido]()
+```
+export class Pedido {
+  constructor() {
+    if (this.constructor === Pedido) {
+      throw new Error("Pedido é uma interface e não pode ser instanciada diretamente");
+    }
+  }
+
+  calcularTotal() {
+    throw new Error("Método calcularTotal() deve ser implementado");
+  }
+
+  obterStatus() {
+    throw new Error("Método obterStatus() deve ser implementado");
+  }
+
+  adicionarItem(item) {
+    throw new Error("Método adicionarItem() deve ser implementado");
+  }
+
+  removerItem(item) {
+    throw new Error("Método removerItem() deve ser implementado");
+  }
+}
+
+```
+
 #### Fábricas
 
+##### [FabricaDePedidosEntrega]()
+```
+import { FabricaDePedidos } from './FabricaDePedidos.js';
+import { PedidoEntrega } from '../products/PedidoEntrega.js';
+
+export class FabricaDePedidosEntrega extends FabricaDePedidos {
+  criarPedido(dados) {
+    console.log(`\n[FabricaDePedidosEntrega] Criando pedido de ENTREGA #${dados.id}...`);
+    const pedido = new PedidoEntrega(dados.id, dados.cliente);
+    console.log(`[FabricaDePedidosEntrega] Pedido de entrega criado com sucesso!`);
+    return pedido;
+  }
+}
+
+```
+
+##### [FabricaDePedidosRetirada]()
+```
+import { FabricaDePedidos } from './FabricaDePedidos.js';
+import { PedidoRetirada } from '../products/PedidoRetirada.js';
+
+export class FabricaDePedidosRetirada extends FabricaDePedidos {
+  criarPedido(dados) {
+    console.log(`\n[FabricaDePedidosRetirada] Criando pedido de RETIRADA #${dados.id}...`);
+    const pedido = new PedidoRetirada(dados.id, dados.cliente);
+    console.log(`[FabricaDePedidosRetirada] Pedido de retirada criado com sucesso!`);
+    return pedido;
+  }
+}
+```
+
 #### Classes Pedido
+
+##### [PedidoEntrega]()
+```
+import { Pedido } from './Pedido.js';
+
+export class PedidoEntrega extends Pedido {
+  constructor(id, cliente) {
+    super();
+    this.id = id;
+    this.itens = [];
+    this.cliente = cliente;
+    this.status = 'AGUARDANDO_PREPARO';
+    this.enderecoEntrega = null;
+    this.taxaEntrega = 0;
+    this.valorTotal = 0;
+  }
+
+  calcularTotal() {
+    const subtotal = this.itens.reduce((total, item) => {
+      return total + item.calcularSubtotal();
+    }, 0);
+
+    this.valorTotal = subtotal + this.taxaEntrega;
+    return this.valorTotal;
+  }
+
+  obterStatus() {
+    return this.status;
+  }
+
+  adicionarItem(item) {
+    this.itens.push(item);
+    this.calcularTotal();
+  }
+
+  removerItem(item) {
+    const index = this.itens.indexOf(item);
+    if (index > -1) {
+      this.itens.splice(index, 1);
+      this.calcularTotal();
+    }
+  }
+
+  calcularTaxaEntrega() {
+    const distanciaSimulada = Math.random() * 10;
+    this.taxaEntrega = 5.00 + (distanciaSimulada * 2.00);
+    this.calcularTotal();
+    return this.taxaEntrega;
+  }
+
+  definirEnderecoEntrega(endereco) {
+    this.enderecoEntrega = endereco;
+    this.calcularTaxaEntrega();
+    console.log(`Endereço de entrega definido: ${endereco.obterEnderecoCompleto()}`);
+    console.log(`Taxa de entrega: R$ ${this.taxaEntrega.toFixed(2)}`);
+  }
+}
+```
+
+###### [PedidoRetirada]()
+```
+import { Pedido } from './Pedido.js';
+
+export class PedidoRetirada extends Pedido {
+  constructor(id, cliente) {
+    super();
+    this.id = id;
+    this.itens = [];
+    this.cliente = cliente;
+    this.status = 'AGUARDANDO_PREPARO';
+    this.horarioRetirada = null;
+    this.valorTotal = 0;
+  }
+
+  calcularTotal() {
+    this.valorTotal = this.itens.reduce((total, item) => {
+      return total + item.calcularSubtotal();
+    }, 0);
+    return this.valorTotal;
+  }
+
+  obterStatus() {
+    return this.status;
+  }
+
+  adicionarItem(item) {
+    this.itens.push(item);
+    this.calcularTotal();
+  }
+
+  removerItem(item) {
+    const index = this.itens.indexOf(item);
+    if (index > -1) {
+      this.itens.splice(index, 1);
+      this.calcularTotal();
+    }
+  }
+
+  definirHorarioRetirada(horario) {
+    this.horarioRetirada = horario;
+    console.log(`Horário de retirada definido para: ${horario.toLocaleString('pt-BR')}`);
+  }
+}
+```
+
+#### Resultados do Código
+
+#### Passo a Passo para Rodar o Código
+
+```bash
+cd factory-method
+npm run demo
+```
 
 ## Quadro de Participações
 
@@ -84,3 +271,4 @@ A implementação do padrão do projeto foi baseada no Diagrama de Classes citad
 | :--------: | :----: | :-------------------------------- | :----------------------------------------: | :----------------------------------------: | :-------------: |
 | 09/10/2025 |  `0.1`   | Criação da página e documentação da introdução, factory method e vantagens/desvantagens | [`@Ana Clara`](https://github.com/anabborges) | [`@`](https://github.com/) |   00/00/0000    |
 | 21/10/2025 |  `0.2`   | Adiciona foto do diagrama de classes | [`@Ana Clara`](https://github.com/anabborges) | [`@`](https://github.com/) |   00/00/0000    |
+| 22/10/2025 |  `0.3`   | Adiciona códigos | [`@Ana Clara`](https://github.com/anabborges) | [`@`](https://github.com/) |   00/00/0000    |
