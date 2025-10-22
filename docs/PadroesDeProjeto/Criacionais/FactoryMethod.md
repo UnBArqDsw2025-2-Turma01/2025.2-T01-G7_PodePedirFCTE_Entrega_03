@@ -38,14 +38,24 @@ Para a aplicação no projeto, foi decidido que ele seria utilizado no contexto 
 
 ### Diagrama de Classes
 
-O diagrama foi criado levando em consideração o [Diagrama de Classes]() feito na segunda entrega e os debates entre as integrantes responsáveis pelo padrão de projeto.
+O diagrama foi criado levando em consideração o [Diagrama de Classes](https://unbarqdsw2025-2-turma01.github.io/2025.2-T01-G7_PodePedirFCTE_Entrega_02/#/./Modelagem/ModelagemEstatica/DiagramaDeClasses) feito na segunda entrega e os debates entre as integrantes responsáveis pelo padrão de projeto.
 
-[Foto diagrama]()
+<img src="../../assets/diagrama-factory-method.png" alt="Diagrama Factory Method" width="800" height="700">
 
 Foram criadas duas interfaces:
 - FabricaDePedidos: feita para padronizar um método comum entre todas as Fabricas de Pedidos. Dessa forma, arquivos que chamam o método serão capazes de chamá-lo sem precisar saber qual é o tipo do pedido.
 
 - Pedido: feita para padronizar alguns métodos comuns entre todas os tipos de Pedidos. Dessa forma, arquivos que chamam os métodos serão capazes de chamá-lo sem precisar saber qual é o tipo do pedido.
+
+Além disso, foram criadas duas fábricas:
+- FabricaDePedidosEntrega:
+
+- FabricaDePedidosRetirada:
+
+As fábricas são responsáveis por instanciarem objetos dos tipos:
+- PedidoRetirada:
+
+- PedidoEntrega: 
 
 ### Implementação
 
@@ -61,8 +71,8 @@ A implementação do padrão do projeto foi baseada no Diagrama de Classes citad
 
 | **Membro da equipe** | **Função** |
 | :------------- | :--------- |
-| [Ana Clara](https://github.com/anabborges) | Documentação da Introdução e do Factory Method, Criação do Diagrama de Classes |
-| [Gabriela](https://github.com/gaubiela) | Documentação da Introdução e do Factory Method, Revisão e Ajustes no Diagrama de Classes |
+| [Ana Clara](https://github.com/anabborges) | Documentação da Introdução e do Factory Method, Criação do Diagrama de Classes, Revisão e Ajustes na Implementação |
+| [Gabriela](https://github.com/gaubiela) | Revisão e Ajustes no Diagrama de Classes, Implementação com Node.js |
 
 ## Referências
 
@@ -73,3 +83,4 @@ A implementação do padrão do projeto foi baseada no Diagrama de Classes citad
 | **Data**       | **Versão** | **Descrição**                         | **Autor**                                      | **Revisor**                                      | **Data da Revisão** |
 | :--------: | :----: | :-------------------------------- | :----------------------------------------: | :----------------------------------------: | :-------------: |
 | 09/10/2025 |  `0.1`   | Criação da página e documentação da introdução, factory method e vantagens/desvantagens | [`@Ana Clara`](https://github.com/anabborges) | [`@`](https://github.com/) |   00/00/0000    |
+| 21/10/2025 |  `0.2`   | Adiciona foto do diagrama de classes | [`@Ana Clara`](https://github.com/anabborges) | [`@`](https://github.com/) |   00/00/0000    |
