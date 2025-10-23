@@ -336,11 +336,17 @@ public class Testes {
 
 ```
 
+## Explicação do Padrão em Vídeo
+
+Para garantir uma melhor explicação de como o GOF foi aplicado no desenvolvimento do projeto Pode Pedir FCTE, foi feito também um vídeo contendo além da explicação o funcionamento do código desenvolvido.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Bf0H-tyQQHA?si=qctcsVeycmvufSmC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Quadro de Participações
 
 | **Membro da equipe** | **Função** |
 | :------------- | :--------- |
-| [Luiz](https://github.com/luizfaria1989) | Documentação da página, criação do diagrama e dos blocos de código. |
+| [Luiz](https://github.com/luizfaria1989) | Documentação da página, criação do diagrama, dos blocos de código e do vídeo explicativo. |
 
 ## Referências
 
@@ -358,3 +364,4 @@ public class Testes {
 | 15/10/2025 |  `0.2`   | Adição do diagrama e dos códigos. | [`@Luiz`](https://github.com/luizfaria1989) | [`@`](https://github.com/) |   00/00/0000    |
 | 16/10/2025 |  `0.3`   | Incrementa documentação do padrão de projeto. | [`@Luiz`](https://github.com/luizfaria1989) | [`@`](https://github.com/) |   00/00/0000    |
 | 20/10/2025 |  `0.4`   | Incrementa diagrama de classes, blocos de código e documentação. | [`@Luiz`](https://github.com/luizfaria1989) | [`@`](https://github.com/) |   00/00/0000    |
+| 23/10/2025 |  `0.5`   | Adiciona o vídeo explicando como o GOF foi implementado. | [`@Luiz`](https://github.com/luizfaria1989) | [`@`](https://github.com/) |   00/00/0000    |
