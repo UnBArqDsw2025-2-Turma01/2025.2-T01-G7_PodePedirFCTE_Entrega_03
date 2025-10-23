@@ -5,6 +5,7 @@
 export class Entregador {
     private _username: string = '';
     private _email: string = '';
+    private _nome: string = '';
     private _senha: string = '';
     private _telefone: string = '';
     
@@ -23,6 +24,10 @@ export class Entregador {
 
     public get email(): string {
         return this._email;
+    }
+
+    public get nome(): string {
+        return this._nome;
     }
 
     public get senha(): string {
@@ -48,6 +53,10 @@ export class Entregador {
 
     public set email(value: string) {
         this._email = value;
+    }
+
+    public set nome(value: string) {
+        this._nome = value;
     }
 
     public set senha(value: string) {
