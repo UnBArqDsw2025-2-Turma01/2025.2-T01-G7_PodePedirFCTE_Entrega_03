@@ -51,13 +51,13 @@ Por outro lado, a principal desvantagem reconhecida é o aumento da complexidade
 ### Modelagem
 
 <p style="text-align: center">
-    <strong>Figura 1</strong> – Padrão Builder em...
+    <strong>Figura 1</strong> – Diagrama UML Builder cadastro de usuários no PodePedirFCTE
 </p>
 
-<!--[Nome da figura ex:Diagrama de colaboração do projeto PodePedirFCTE](../../assets/colaboracao-solicitar-pedido.png)]-->
+![Diagrama UML Builder PodePedirFCTE](./assests/builder.png)
 
 <p>
-    <strong>Autor:</strong> <a href="https://github.com/...">Nome</a>, 2025
+    <strong>Autor: autoria da equipe</strong>, 2025
 </p>
 
 ### Implementação
@@ -66,8 +66,8 @@ Por outro lado, a principal desvantagem reconhecida é o aumento da complexidade
 
 | **Membro da equipe** | **Função** |
 | :------------- | :--------- |
-| [Nome](https://github.com/) | Detalhar contribução |
-| [Willian](https://github.com/Wooo589) | Documentação inicial e explicação do padrão |
+| [Rodrigo](https://github.com/rodrigoFAmaral) | Criação do UML e codificação|
+| [Willian](https://github.com/Wooo589) | Documentação inicial, explicação do padrão e codificação|
 
 ## Referências
 
@@ -79,5 +79,6 @@ Por outro lado, a principal desvantagem reconhecida é o aumento da complexidade
 
 | **Data**       | **Versão** | **Descrição**                         | **Autor**                                      | **Revisor**                                      | **Data da Revisão** |
 | :--------: | :----: | :-------------------------------- | :----------------------------------------: | :----------------------------------------: | :-------------: |
-| 17/10/2025 |  `0.1`   | Adicionar estrutura inicial da página e seção de introdução  | [`@Willian`](https://github.com/Wooo589) | [`@`](https://github.com/) |   00/00/0000    |
-| 20/10/2025 |  `0.2`   | Adicionar explicação do padrão  | [`@Willian`](https://github.com/Wooo589) | [`@`](https://github.com/) |   00/00/0000    |
+| 17/10/2025 |  `0.1`   | Adicionar estrutura inicial da página e seção de introdução  | [`@Willian`](https://github.com/Wooo589) | [`@`](https://github.com/rdorigoFAmara) |  22/10/2025   |
+| 20/10/2025 |  `0.2`   | Adicionar explicação do padrão  | [`@Willian`](https://github.com/Wooo589) | [`@`](https://github.com/rdorigoFAmara) |   22/10/2025    |
+| 22/10/2025 |  `0.3`   | Adicionar diagrama UML  | [`@Rodrigo`](https://github.com/rodrigoFAmaral) | [`@`](https://github.com/Wooo589) |   22/10/2025    |
