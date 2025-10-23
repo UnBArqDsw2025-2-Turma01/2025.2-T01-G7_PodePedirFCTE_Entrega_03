@@ -381,6 +381,12 @@ public class Testes {
 }
 ```
 
+## Explicação do Padrão em Vídeo
+
+Para garantir uma melhor explicação de como o GOF foi aplicado no desenvolvimento do projeto Pode Pedir FCTE, foi feito também um vídeo contendo além da explicação o funcionamento do código desenvolvido.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JxK98VUAXTk?si=LFM9HKulR1Dgtc53" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Correlação com Entregas Anteriores
 
 Esta seção estabelece as conexões entre o padrão Chain of Responsibility implementado nesta entrega e os artefatos produzidos nas entregas anteriores do projeto Pode Pedir FCTE.
@@ -413,7 +419,7 @@ A estrutura em Chain of Responsibility permite evoluções futuras, como:
 
 | **Membro da equipe** | **Função** |
 | :------------- | :--------- |
-| [Luiz](https://github.com/luizfaria1989) | Documentação da página, criação do diagrama e dos blocos de código. |
+| [Luiz](https://github.com/luizfaria1989) | Documentação da página, criação do diagrama, dos blocos de código e criação do vídeo explicativo. |
 | [Gabriela](https://github.com/gaubiela) | Documentação da página, validação do diagrama e código. |
 
 ## Referências
@@ -430,5 +436,6 @@ A estrutura em Chain of Responsibility permite evoluções futuras, como:
 
 | **Data**       | **Versão** | **Descrição**                         | **Autor**                                      | **Revisor**                                      | **Data da Revisão** |
 | :--------: | :----: | :-------------------------------- | :----------------------------------------: | :----------------------------------------: | :-------------: |
-| 23/10/2025 |  `0.2`   | Complementação da documentação. | [`@Gabriela`](https://github.com/gaubiela) | [`@`](https://github.com/) |   00/00/0000    |
+| 23/10/2025 |  `0.3`   | Adição do vídeo explicativo. | [`@Luiz`](https://github.com/luizfaria1989) | [`@`](https://github.com/) |   00/00/0000    |
+| 23/10/2025 |  `0.2`   | Complementação da documentação. | [`@Gabriela`](https://github.com/gaubiela) | [`@Luiz`](https://github.com/luizfaria1989) |   23/10/2025    |
 | 23/10/2025 |  `0.1`   | Criação da página, dos blocos de código e diagrama. | [`@Luiz`](https://github.com/luizfaria1989) | [`@Gabriela`](https://github.com/gaubiela) |   23/10/2025    |
