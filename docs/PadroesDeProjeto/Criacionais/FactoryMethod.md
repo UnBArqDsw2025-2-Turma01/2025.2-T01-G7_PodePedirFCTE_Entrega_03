@@ -48,14 +48,14 @@ Foram criadas duas interfaces:
 - Pedido: feita para padronizar alguns métodos comuns entre todas os tipos de Pedidos. Dessa forma, arquivos que chamam os métodos serão capazes de chamá-lo sem precisar saber qual é o tipo do pedido.
 
 Além disso, foram criadas duas fábricas:
-- FabricaDePedidosEntrega:
+- FabricaDePedidosEntrega: Responsável por instanciar objetos do tipo PedidosEntrega.
 
-- FabricaDePedidosRetirada:
+- FabricaDePedidosRetirada: Responsável por instanciar objetos do tipo PedidosRetirada.
 
 As fábricas são responsáveis por instanciarem objetos dos tipos:
-- PedidoRetirada:
+- PedidoRetirada: Representa pedidos que serão retirados no estabelecimento pelo usuário.
 
-- PedidoEntrega: 
+- PedidoEntrega: Representa pedidos que serão entregues ao usuário.
 
 ### Implementação
 
@@ -276,3 +276,4 @@ npm run demo
 | 21/10/2025 |  `0.2`   | Adiciona foto do diagrama de classes | [`@Ana Clara`](https://github.com/anabborges) | [`@Gabriela`](https://github.com/gaubiela) |   00/00/0000    |
 | 22/10/2025 |  `0.3`   | Adiciona códigos | [`@Ana Clara`](https://github.com/anabborges) | [`@Gabriela`](https://github.com/gaubiela) |   00/00/0000    |
 | 23/10/2025 |  `0.4`   | Adiciona prints da execucao do codigo | [`@Ana Clara`](https://github.com/anabborges) | [`@Gabriela`](https://github.com/gaubiela) |   00/00/0000    |
+| 23/10/2025 |  `1.0`   | Detalhamento de classes | [`@Ana Clara`](https://github.com/anabborges) | [`@Gabriela`](https://github.com/gaubiela) |   00/00/0000    |
