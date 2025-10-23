@@ -1,0 +1,26 @@
+# Node.js
+node_modules/
+*.log
+
+# Build
+dist/
+build/
+
+# TypeScript compiled files
+*.js
+*.js.map
+*.d.ts
+
+# Environment
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Others
+package-lock.json
