@@ -79,6 +79,6 @@ Por outro lado, a principal desvantagem reconhecida é o aumento da complexidade
 
 | **Data**       | **Versão** | **Descrição**                         | **Autor**                                      | **Revisor**                                      | **Data da Revisão** |
 | :--------: | :----: | :-------------------------------- | :----------------------------------------: | :----------------------------------------: | :-------------: |
-| 17/10/2025 |  `0.1`   | Adicionar estrutura inicial da página e seção de introdução  | [`@Willian`](https://github.com/Wooo589) | [`@`](https://github.com/rdorigoFAmara) |  22/10/2025   |
-| 20/10/2025 |  `0.2`   | Adicionar explicação do padrão  | [`@Willian`](https://github.com/Wooo589) | [`@`](https://github.com/rdorigoFAmara) |   22/10/2025    |
-| 22/10/2025 |  `0.3`   | Adicionar diagrama UML  | [`@Rodrigo`](https://github.com/rodrigoFAmaral) | [`@`](https://github.com/Wooo589) |   22/10/2025    |
+| 17/10/2025 |  `0.1`   | Adicionar estrutura inicial da página e seção de introdução  | [`@Willian`](https://github.com/Wooo589) | [`@Rodrigo`](https://github.com/rdorigoFAmara) |  22/10/2025   |
+| 20/10/2025 |  `0.2`   | Adicionar explicação do padrão  | [`@Willian`](https://github.com/Wooo589) | [`@Rodrigo`](https://github.com/rdorigoFAmara) |   22/10/2025    |
+| 22/10/2025 |  `0.3`   | Adicionar diagrama UML  | [`@Rodrigo`](https://github.com/rodrigoFAmaral) | [`@Willian`](https://github.com/Wooo589) |   22/10/2025    |
