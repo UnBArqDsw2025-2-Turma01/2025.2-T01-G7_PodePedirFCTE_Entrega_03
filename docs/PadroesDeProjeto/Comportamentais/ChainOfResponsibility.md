@@ -2,42 +2,139 @@
 
 ## Introdução
 
-Esse documento apresenta explicações referentes ao padrão de projeto Chain of Responsibility e detalha como ele foi utilizado dentro do projeto Pode Pedir FCTE. 
+Esse documento apresenta explicações referentes ao padrão de projeto Chain of Responsibility (Cadeia de Responsabilidade) e detalha como ele foi utilizado dentro do projeto Pode Pedir FCTE.
 
-O padrão Chain of Responsibility evita acoplar o remetente de uma solicitação ao seu destinatário dando a mais de um objeto a chance de processar a solicitação. Com isso, são encadeados os objetos receptores e a solicitação é passada ao longo da cadeia até que um objeto a processe.
+O padrão Chain of Responsibility evita acoplar o remetente de uma solicitação ao seu destinatário, dando a mais de um objeto a chance de processar a solicitação. Com isso, são encadeados os objetos receptores e a solicitação é passada ao longo da cadeia até que um objeto a processe.
+
+No contexto do projeto **Pode Pedir FCTE**, uma plataforma de delivery para estabelecimentos próximos à FCTE, o padrão Chain of Responsibility foi aplicado ao fluxo de processamento de pagamentos. Este fluxo envolve múltiplas etapas de validação e autorização que precisam ser executadas sequencialmente, mas sem criar forte acoplamento entre os diferentes componentes do sistema.
 
 
 ## Chain of Responsibility
 
-O padrão Chain of Responsibility é apresentado no livro Design Patterns: Elements of Reusable Object-Oriented Software como um tipo de GOF comportamental
+O padrão Chain of Responsibility é apresentado no livro *Design Patterns: Elements of Reusable Object-Oriented Software* como um **padrão comportamental de objetos**. Segundo Gamma et al. (1995, p. 212), este padrão tem como intenção:
 
-Um exemplo motivacional apresentado no livro de Gamma et. al. é com relação ...
+> "Evitar o acoplamento do remetente de uma solicitação ao seu receptor, ao dar a mais de um objeto a oportunidade de tratar a solicitação. Encadear os objetos receptores, passando a solicitação ao longo da cadeia até que um objeto a trate."
 
-Além disso, no livro os autores discutem algumas aplicabilidades desse padrão de projeto. Para isso, o padrão Chain of Responsibility deve ser aplicado quando todos os itens abaixo forem verdade.
+### Motivação
 
-- Nota 1
-- Nota 2
+O exemplo motivacional clássico apresentado por Gamma et al. (1995, p. 212-213) é um recurso de *help* sensível ao contexto para interfaces gráficas. O usuário pode obter informação de ajuda em qualquer parte da interface simplesmente pressionando o botão do mouse sobre ela, e a ajuda fornecida depende da parte selecionada e do seu contexto.
 
-O padrão Chain of Responsibility é composto por:
+O problema fundamental é que "o objeto que na prática fornece a ajuda não é conhecido explicitamente pelo objeto (por exemplo, o botão) que inicia a solicitação de ajuda" (GAMMA et al., 1995, p. 212). A solução proposta pelo padrão é desacoplar remetentes e receptores, permitindo que múltiplos objetos tenham a oportunidade de tratar uma solicitação ao longo de uma cadeia.
 
-* **Componente 1:**
+O padrão é particularmente útil em cenários de **pipeline de processamento**, onde cada etapa realiza uma função específica e pode determinar se a requisição deve continuar pela cadeia ou ser interrompida.
 
-A seguir, são discutidas as vantagens e desvantagens desse padrão de projeto apontadas pelo Refactoring Guru.
+### Aplicabilidade
+
+O padrão Chain of Responsibility deve ser aplicado quando (GAMMA et al., 1995, p. 214):
+
+- Mais de um objeto pode tratar uma solicitação, e o objeto que a tratará não é conhecido *a priori*, devendo ser escolhido automaticamente.
+- Você quer emitir uma solicitação para um dentre vários objetos, sem especificar explicitamente o receptor.
+- O conjunto de objetos que pode tratar uma solicitação deveria ser especificado dinamicamente, permitindo flexibilidade na composição da cadeia.
+
+### Estrutura e Participantes
+
+O padrão é composto pelos seguintes participantes (GAMMA et al., 1995, p. 214-215):
+
+* **Handler (Processador):** Define uma interface para tratar solicitações e (opcionalmente) implementa o elo (*link*) ao sucessor.
+
+* **ConcreteHandler (Processador Concreto):** Trata de solicitações pelas quais é responsável. Pode acessar seu sucessor. Se puder tratar a solicitação, ele o faz; caso contrário, repassa-a ao sucessor.
+
+* **Client (Cliente):** Inicia a solicitação para um objeto ConcreteHandler da cadeia.
+
+#### Colaborações
+
+Quando um cliente emite uma solicitação, ela se propaga ao longo da cadeia até que um ConcreteHandler assuma a responsabilidade de tratá-la.
 
 ### Vantagens
 
-- 
+**1. Acoplamento reduzido:** O padrão "libera um objeto de ter que conhecer qual o outro objeto que trata de uma solicitação" (GAMMA et al., 1995, p. 215). Um objeto precisa saber apenas que a solicitação será tratada "apropriadamente", sem que remetente e receptor tenham conhecimento explícito um do outro. Como resultado, o padrão simplifica as interconexões: ao invés de manter referências para todos os receptores-candidatos, os objetos mantêm apenas uma referência ao sucessor.
 
+**2. Flexibilidade adicional na atribuição de responsabilidades:** O padrão proporciona flexibilidade na distribuição de responsabilidades, pois "é possível acrescentar ou mudar responsabilidades para o tratamento de uma solicitação pelo acréscimo ou mudança da cadeia em tempo de execução" (GAMMA et al., 1995, p. 215). Isso pode ser combinado com subclasses para especializar estaticamente os *handlers*.
+
+**3. Controle da ordem de processamento:** Alterando a ordem dos handlers na cadeia, é possível reorganizar todo o fluxo de processamento sem alterar as classes individuais (REFACTORING GURU, 2025).
+
+**4. Princípio da responsabilidade única:** Você pode desacoplar classes que invocam operações de classes que realizam operações, mantendo cada handler focado em uma única responsabilidade (REFACTORING GURU, 2025).
+
+**5. Princípio aberto/fechado:** Você pode introduzir novos handlers na aplicação sem quebrar o código cliente existente (REFACTORING GURU, 2025).
+
+### Desvantagens
+
+**1. A recepção não é garantida:** Como "uma solicitação não tem um receptor explícito, não há garantia de que ela será tratada – a solicitação pode sair pelo final da cadeia sem ter sido tratada" (GAMMA et al., 1995, p. 215). Isso pode ocorrer especialmente quando a cadeia não está configurada apropriadamente.
+
+**2. Dificuldade de observação das características de tempo de execução:** Pode ser difícil observar e depurar o comportamento em tempo de execução, especialmente em cadeias longas ou complexas, tornando o rastreamento do fluxo mais desafiador.
+
+### Aspectos de Implementação
+
+Aspectos importantes a serem considerados ao implementar o padrão (GAMMA et al., 1995, p. 215-217):
+
+**1. Implementando a cadeia de sucessores:** Há duas maneiras possíveis:
+   - **(a) Definir novos elos** - normalmente no Handler, porém os ConcreteHandlers também podem defini-las;
+   - **(b) Utilizar elos existentes** - aproveitar referências já existentes, como as referências aos pais numa hierarquia partes-todo.
+
+**2. Conectando sucessores:** Quando não existem referências pré-existentes, o handler mantém a ligação para o sucessor, permitindo fornecer uma implementação-padrão de HandleRequest que repassa a solicitação automaticamente.
+
+**3. Representando solicitações:** Diferentes opções estão disponíveis:
+   - **Forma simples:** Invocação de uma operação codificada de maneira rígida (como HandleHelp). É conveniente e seguro, mas limitado ao conjunto fixo de solicitações definido pela classe handler.
+   - **Função handler com código:** Uma única função que aceita um código de solicitação como parâmetro. Mais flexível e suporta um conjunto aberto de solicitações, mas requer comandos condicionais para despacho.
+   - **Objetos-solicitação separados:** Uma classe Request que "empacota" os parâmetros da solicitação, permitindo definir novos tipos por subclasses.
+
+### Usos Conhecidos
+
+Diversas bibliotecas e frameworks utilizam o padrão:
+
+- **MacApp e ET++:** Tratam eventos de usuário com a classe handler chamada "Event-Handler".
+- **Biblioteca TCL da Symantec:** Usa o termo "Bureaucrat" para a classe handler.
+- **AppKit do NeXT:** Adota o nome "Responder" para representar handlers.
+- **Framework Unidraw:** Define objetos Command que encapsulam solicitações para Components, que podem repassar a interpretação de comandos hierarquicamente aos seus pais.
+- **ET++:** Aplica o padrão para atualizações gráficas através da operação InvalidateRct, que repassa solicitações pela cadeia até Window.
+
+### Padrões Relacionados
+
+O Chain of Responsibility é frequentemente aplicado em conjunto com o padrão **Composite**, onde o pai de um componente pode atuar como seu sucessor na cadeia.
 
 ## Aplicação no projeto
 
-Para o GOF criacional Flyweight foi escolhido trabalhar com a classe de Pagamento do diagrama original.
+Para a implementação do **GOF Comportamental Chain of Responsibility** foi escolhido trabalhar com o fluxo de processamento de **Pagamentos** do diagrama de classes original do projeto Pode Pedir FCTE.
 
 ![diagrama de classes](../../assets/classes.png)
+<p align="center"><i>Figura 1: Diagrama de Classes do Projeto Pode Pedir FCTE - Contexto de Domínio</i></p>
+
+### Justificativa da Escolha
+
+O fluxo de pagamento foi escolhido por representar um cenário real onde múltiplas etapas de validação e processamento precisam ocorrer de forma sequencial e desacoplada. No contexto de uma plataforma de delivery, um pagamento precisa passar por diferentes verificações antes de ser aprovado:
+
+1. **Validação Interna** - Verificação de dados básicos do pagamento
+2. **Sistema Anti-Fraude** - Análise de padrões suspeitos e limites de segurança
+3. **Gateway de Pagamento** - Autorização junto à operadora financeira
+4. **Notificação** - Comunicação do resultado para as partes interessadas (Aluno e Fornecedor)
+
+Cada uma dessas etapas pode **aprovar e encaminhar** a requisição para a próxima fase, ou **rejeitar e interromper** o processamento. Esta característica torna o Chain of Responsibility ideal para esse cenário.
 
 ![diagrama chain of responsibility](../../assets/chain-of-responsibility.png)
+<p align="center"><i>Figura 2: Diagrama UML do Padrão Chain of Responsibility Aplicado ao Processamento de Pagamentos</i></p>
 
-Com isso, é possível também começar a representação do diagrama em forma de código. Para a construção do código foi escolhido utilizar Java com a IDE Eclipse, já para para a construção do diagrama foi escolhida a ferramenta Astah.
+### Ferramentas e Tecnologias Utilizadas
+
+Para a construção desta implementação foram utilizadas as seguintes ferramentas:
+
+- **Linguagem de Programação:** Java (versão orientada a objetos)
+- **IDE:** Eclipse IDE for Java Developers
+- **Ferramenta de Modelagem:** Astah UML para criação dos diagramas de classes
+- **Controle de Versão:** Git/GitHub para versionamento do código e documentação
+
+### Insights e Discussões
+
+**Flexibilidade vs. Complexidade:** A implementação trouxe grande flexibilidade ao sistema, permitindo adicionar ou remover etapas de validação sem impactar o código cliente. Conforme destaca a literatura, esta flexibilidade permite "acrescentar ou mudar responsabilidades para o tratamento de uma solicitação pelo acréscimo ou mudança da cadeia em tempo de execução" (GAMMA et al., 1995, p. 215). No entanto, identificou-se que cadeias muito longas podem dificultar o rastreamento e debug do fluxo, corroborando as deficiências mencionadas sobre dificuldades de observação em tempo de execução.
+
+**Decisão de Design - Interrupção da Cadeia:** Optou-se por permitir que handlers intermediários interrompam a cadeia ao rejeitar um pagamento, evitando processamento desnecessário. Um pagamento com valor negativo, por exemplo, não precisa passar pela verificação de fraude ou gateway. Esta decisão está alinhada com o conceito de que "o primeiro objeto na cadeia que recebe a solicitação trata a mesma ou a repassa para o próximo candidato" (GAMMA et al., 1995, p. 213).
+
+**Implementação da Cadeia de Sucessores:** Foi adotada a abordagem de **definir novos elos** (GAMMA et al., 1995, p. 215-216) na classe `ProcessadorDePagamentoHandler`, que mantém explicitamente a referência ao sucessor através do atributo `nextHandler` e do método `setNext()`. Esta escolha se justifica pela ausência de referências pré-existentes adequadas no domínio do problema.
+
+**Representação de Solicitações:** Optou-se pela **operação codificada de maneira rígida** (`handle(Pagamento pagamento)`), que é "conveniente e seguro" (GAMMA et al., 1995, p. 216), embora limitado ao conjunto fixo de solicitações definido pela classe handler. Para o contexto específico de processamento de pagamentos, esta limitação não representa problema, pois o fluxo de validação é bem definido e estável.
+
+**Separação de Responsabilidades:** Cada handler tem uma responsabilidade clara e única. Por exemplo, o `ValidadorInternoHandler` verifica apenas dados básicos, enquanto o `SistemaAntiFraudeHandler` foca exclusivamente em padrões de fraude. Esta separação reflete o princípio de que cada ConcreteHandler "trata de solicitações pelas quais é responsável" (GAMMA et al., 1995, p. 215), facilitando manutenção e testes unitários.
+
+**Estado Mutável do Pagamento:** A classe `Pagamento` atua como um objeto de contexto que atravessa toda a cadeia, acumulando mudanças de estado (`StatusPagamento`) e permitindo que handlers posteriores tomem decisões baseadas em processamentos anteriores. Esta abordagem se assemelha aos "objetos-solicitação" (GAMMA et al., 1995, p. 217), onde uma classe encapsula parâmetros e estado da solicitação.
 
 
 ### Classe Serviço de Pagamento
@@ -284,20 +381,54 @@ public class Testes {
 }
 ```
 
+## Correlação com Entregas Anteriores
+
+Esta seção estabelece as conexões entre o padrão Chain of Responsibility implementado nesta entrega e os artefatos produzidos nas entregas anteriores do projeto Pode Pedir FCTE.
+
+### Relação com a Entrega 01 - Base e Requisitos
+
+O padrão Chain of Responsibility dialoga diretamente com o domínio estabelecido na [Entrega 01](https://github.com/UnBArqDsw2025-2-Turma01/2025.2-T01-G7_PodePedirFCTE_Entrega_01), onde foram definidos os conceitos fundamentais do sistema de delivery:
+
+- **Atores do Sistema:** A classe `Pagamento` conecta os atores Aluno (cliente) e Fornecedor (estabelecimento), que foram identificados na modelagem inicial do projeto.
+- **Fluxo de Negócio:** O processamento sequencial de pagamentos reflete o fluxo de negócio onde um pedido precisa ter seu pagamento validado antes da confirmação junto ao fornecedor.
+- **Requisitos Não-Funcionais:** A implementação em cadeia atende requisitos de segurança (validação anti-fraude) e confiabilidade (múltiplas camadas de verificação) que foram elicitados na fase inicial.
+
+### Relação com a Entrega 02 - Modelagem e Notação UML
+
+O padrão implementado se baseia e estende o [Diagrama de Classes](https://unbarqdsw2025-2-turma01.github.io/2025.2-T01-G7_PodePedirFCTE_Entrega_02/#/./Modelagem/ModelagemEstatica/DiagramaDeClasses) desenvolvido na [Entrega 02](https://github.com/UnBArqDsw2025-2-Turma01/2025.2-T01-G7_PodePedirFCTE_Entrega_02):
+
+- **Classe Pagamento:** Originalmente modelada com atributos `idPagamento` e `valorTotal`, foi enriquecida com o enum `StatusPagamento` para suportar o fluxo de estados da cadeia de responsabilidade.
+- **Relacionamentos:** O relacionamento entre `Aluno`, `Pagamento` e `Fornecedor` (visível na Figura 1) evidencia que o processamento de pagamentos é central no fluxo de pedidos da plataforma.
+- **Evolução Arquitetural:** Enquanto a Entrega 02 focou na modelagem estática do domínio, esta entrega introduz a **modelagem comportamental**, mostrando como os objetos colaboram dinamicamente no processamento de pagamentos.
+
+### Extensibilidade para Futuras Entregas
+
+A estrutura em Chain of Responsibility permite evoluções futuras, como:
+
+- **Integração com padrões Criacionais:** Utilizar Factory ou Builder para criar diferentes configurações de cadeias de pagamento (ex: processamento expresso, processamento com análise estendida).
+- **Integração com padrões Estruturais:** Aplicar Decorator para adicionar funcionalidades extras aos handlers (ex: logging, cache de validações).
+- **Observabilidade:** Implementar o padrão Observer para notificar diferentes partes do sistema sobre o progresso do pagamento em cada etapa da cadeia.
+
 ## Quadro de Participações
 
 | **Membro da equipe** | **Função** |
 | :------------- | :--------- |
 | [Luiz](https://github.com/luizfaria1989) | Documentação da página, criação do diagrama e dos blocos de código. |
+| [Gabriela](https://github.com/gaubiela) | Documentação da página, validação do diagrama e código. |
 
 ## Referências
 
-> GAMMA, Erich et al. Design patterns: elements of reusable object-oriented software. Reading, Mass.: Addison-Wesley, 1995.
+> GAMMA, Erich; HELM, Richard; JOHNSON, Ralph; VLISSIDES, John. **Padrões de Projetos: Soluções Reutilizáveis de Software Orientados a Objetos**. Porto Alegre: Bookman, 2000. Tradução de Luiz A. Meirelles Salgado. Título original: *Design Patterns: Elements of Reusable Object-Oriented Software*. Capítulo 5: Padrões Comportamentais - Chain of Responsibility, p. 212-221.
 
-> REFACTORING GURU. Flyweight. Disponível em: https://refactoring.guru/design-patterns/flyweight
+> REFACTORING GURU. **Chain of Responsibility**. 2025. Disponível em: https://refactoring.guru/design-patterns/chain-of-responsibility. Acesso em: 23 out. 2025.
+
+> PODE PEDIR FCTE. **Entrega 01 - Base e Requisitos**. Repositório do Projeto. Disponível em: https://github.com/UnBArqDsw2025-2-Turma01/2025.2-T01-G7_PodePedirFCTE_Entrega_01. Acesso em: 23 out. 2025.
+
+> PODE PEDIR FCTE. **Entrega 02 - Modelagem e Notação UML**. Repositório do Projeto. Disponível em: https://github.com/UnBArqDsw2025-2-Turma01/2025.2-T01-G7_PodePedirFCTE_Entrega_02. Acesso em: 23 out. 2025.
 
 ## Histórico de Versões
 
 | **Data**       | **Versão** | **Descrição**                         | **Autor**                                      | **Revisor**                                      | **Data da Revisão** |
 | :--------: | :----: | :-------------------------------- | :----------------------------------------: | :----------------------------------------: | :-------------: |
-| 23/10/2025 |  `0.1`   | Criação da página, dos blocos de código e diagrama. | [`@Luiz`](https://github.com/luizfaria1989) | [`@`](https://github.com/) |   00/00/0000    |
+| 23/10/2025 |  `0.2`   | Complementação da documentação. | [`@Gabriela`](https://github.com/gaubiela) | [`@`](https://github.com/) |   00/00/0000    |
+| 23/10/2025 |  `0.1`   | Criação da página, dos blocos de código e diagrama. | [`@Luiz`](https://github.com/luizfaria1989) | [`@Gabriela`](https://github.com/gaubiela) |   23/10/2025    |
