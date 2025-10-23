@@ -40,7 +40,7 @@ Para a aplicação no projeto, foi decidido que ele seria utilizado no contexto 
 
 O diagrama foi criado levando em consideração o [Diagrama de Classes](https://unbarqdsw2025-2-turma01.github.io/2025.2-T01-G7_PodePedirFCTE_Entrega_02/#/./Modelagem/ModelagemEstatica/DiagramaDeClasses) feito na segunda entrega e os debates entre as integrantes responsáveis pelo padrão de projeto.
 
-<img src="../../assets/diagrama-factory-method.png" alt="Diagrama Factory Method" width="800" height="700">
+<img src="../../assets/factory-method/diagrama-factory-method.png" alt="Diagrama Factory Method" width="800" height="700">
 
 Foram criadas duas interfaces:
 - FabricaDePedidos: feita para padronizar um método comum entre todas as Fabricas de Pedidos. Dessa forma, arquivos que chamam o método serão capazes de chamá-lo sem precisar saber qual é o tipo do pedido.
@@ -244,9 +244,6 @@ export class PedidoRetirada extends Pedido {
   }
 }
 ```
-
-#### Resultados do Código
-
 #### Passo a Passo para Rodar o Código
 
 ```bash
@@ -254,11 +251,17 @@ cd factory-method
 npm run demo
 ```
 
+#### Resultados da Execução do Código
+
+<img src="../../assets/factory-method/execucao-1.png" alt="Execucao codigo" width="700" height="600">
+<img src="../../assets/factory-method/execucao-2.png" alt="Execucao codigo" width="700" height="600">
+<img src="../../assets/factory-method/execucao-3.png" alt="Execucao codigo" width="700" height="200">
+
 ## Quadro de Participações
 
 | **Membro da equipe** | **Função** |
 | :------------- | :--------- |
-| [Ana Clara](https://github.com/anabborges) | Documentação da Introdução e do Factory Method, Criação do Diagrama de Classes, Revisão e Ajustes na Implementação |
+| [Ana Clara](https://github.com/anabborges) | Documentação da Introdução e do Factory Method, Criação do Diagrama de Classes, Revisão na Implementação |
 | [Gabriela](https://github.com/gaubiela) | Revisão e Ajustes no Diagrama de Classes, Implementação com Node.js |
 
 ## Referências
@@ -272,3 +275,4 @@ npm run demo
 | 09/10/2025 |  `0.1`   | Criação da página e documentação da introdução, factory method e vantagens/desvantagens | [`@Ana Clara`](https://github.com/anabborges) | [`@Gabriela`](https://github.com/gaubiela) |   00/00/0000    |
 | 21/10/2025 |  `0.2`   | Adiciona foto do diagrama de classes | [`@Ana Clara`](https://github.com/anabborges) | [`@Gabriela`](https://github.com/gaubiela) |   00/00/0000    |
 | 22/10/2025 |  `0.3`   | Adiciona códigos | [`@Ana Clara`](https://github.com/anabborges) | [`@Gabriela`](https://github.com/gaubiela) |   00/00/0000    |
+| 23/10/2025 |  `0.4`   | Adiciona prints da execucao do codigo | [`@Ana Clara`](https://github.com/anabborges) | [`@Gabriela`](https://github.com/gaubiela) |   00/00/0000    |
