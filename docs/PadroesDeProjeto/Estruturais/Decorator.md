@@ -42,6 +42,7 @@ Para a aplicação no projeto, foi decidido que ele seria utilizado no contexto 
 
 O diagrama foi criado levando em consideração o [Diagrama de Classes](https://unbarqdsw2025-2-turma01.github.io/2025.2-T01-G7_PodePedirFCTE_Entrega_02/#/./Modelagem/ModelagemEstatica/DiagramaDeClasses) feito na segunda entrega e os debates entre as integrantes responsáveis pelo padrão de projeto.
 
+![Diagrama de Classes do Padrão Decorator](../../assets/decorator/diagrama-decorator.png)
 
 #### Participantes do Diagrama:
 
@@ -184,6 +185,9 @@ cd decorator
 npm run demo
 ```
 
+#### Resultados da Execução do Código
+![Resultado da execução do código demo do padrão Decorator](../../assets/decorator/execucao.png)
+
 ### Colaborações
 
 Conforme descrito por Gamma et al. (1995, p. 173), o Decorator repassa solicitações para o seu objeto Component. Opcionalmente, ele pode executar operações adicionais antes e depois de repassar a solicitação. No nosso caso:
@@ -211,6 +215,7 @@ Segundo Gamma et al. (1995, p. 173-174), o padrão Decorator apresenta os seguin
 | :------------- | :--------- |
 | [Ana Clara](https://github.com/anabborges) | Documentação do padrão e criação do diagrama de classes |
 | [Gabriela](https://github.com/gaubiela) | Documentação do padrão, ajustes e revisão do diagrama de classes, desenvolvimento do código demo |
+| [Rodrigo](https://github.com/rodrigoFAmaral) | Auxilio na documentação e revisão do código demo |
 
 ## Referências
 
@@ -225,4 +230,5 @@ Segundo Gamma et al. (1995, p. 173-174), o padrão Decorator apresenta os seguin
 | 20/10/2025 |  `0.1`   | Criação da página | [`@Ana Clara`](https://github.com/anabborges) | [`@Gabriela`](https://github.com/gaubiela) |   23/10/2025    |
 | 22/10/2025 |  `0.2`   | Adição da introdução, vantagens e desvantagens | [`@Ana Clara`](https://github.com/anabborges) | [`@Gabriela`](https://github.com/gaubiela) |   23/10/2025    |
 | 22/10/2025 |  `0.3`   | Inicia a documentação da aplicação no projeto | [`@Ana Clara`](https://github.com/anabborges) | [`@Gabriela`](https://github.com/gaubiela) |   23/10/2025    |
-| 23/10/2025 |  `0.4`   | Adiciona explicação completa do padrão, diagrama de classes, implementação e referências ao GoF | [`@Gabriela`](https://github.com/gaubiela) | [`@`](https://github.com/) |   00/00/0000    |
+| 23/10/2025 |  `0.4`   | Adiciona explicação completa do padrão, diagrama de classes, implementação e referências ao GoF | [`@Gabriela`](https://github.com/gaubiela) | [`@Rodrigo`](https://github.com/rodrigoFAmaral) |   23/10/2025    |
+| 23/10/2025 |  `0.5`   | Ajustes na documentação e revisão do código demo | [`@Rodrigo`](https://github.com/rodrigoFAmaral) | [`@`](https://github.com/) |   24/10/2025    |
