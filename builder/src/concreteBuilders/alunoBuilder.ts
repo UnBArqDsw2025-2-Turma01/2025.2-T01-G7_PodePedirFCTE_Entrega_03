@@ -37,8 +37,9 @@ class alunoBuilder implements userBuilder {
     }
     
     getResult(): Aluno {
+        const resultado = this.aluno;
         this.reset();
-        return this.aluno;
+        return resultado;
     }
 }
 

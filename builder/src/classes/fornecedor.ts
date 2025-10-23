@@ -17,10 +17,6 @@ export class Fornecedor {
     private _categoria: string = '';
     private _status: string = 'Inativo';
 
-    constructor() {
-        console.log('🏪 Novo fornecedor criado!');
-    }
-
     // GETTERS - Para ler os valores
     public get username(): string {
         return this._username;

@@ -41,8 +41,9 @@ class entregadorBuilder implements userBuilder {
     }
 
     getResult(): Entregador {
+        const resultado = this.entregador;
         this.reset();
-        return this.entregador;
+        return resultado;
     }
 }
 

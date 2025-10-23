@@ -30,6 +30,7 @@ class Director {
         if ("setNome" in this.builder && "setVeiculo" in this.builder) {
             (this.builder as any).setNome("Carlos Souza");
             (this.builder as any).setVeiculo("Moto");
+            (this.builder as any).setIdentificador("ENT12345");
         }
     }
 
@@ -50,6 +51,9 @@ class Director {
         (this.builder as any).setRazaoSocial("Fornecedor X Ltda");
         (this.builder as any).setCNPJ("12.345.678/0001-99");
         (this.builder as any).setEndereco("Rua das Flores, 100");
+        (this.builder as any).setHorarioFuncionamento("08:00 - 18:00");
+        (this.builder as any).setCategoria("Alimentos");
+        (this.builder as any).setStatus("Ativo");
         }
     }
 }

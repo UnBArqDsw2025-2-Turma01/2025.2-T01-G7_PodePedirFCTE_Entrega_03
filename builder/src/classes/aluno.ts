@@ -10,11 +10,6 @@ export class Aluno {
     private _telefone: string = '';
     private _cpf: string = '';
     
-    // Construtor
-    constructor() {
-        console.log('🎓 Novo aluno criado!');
-    }
-
     // GETTERS - Para ler os valores
     public get username(): string {
         return this._username;

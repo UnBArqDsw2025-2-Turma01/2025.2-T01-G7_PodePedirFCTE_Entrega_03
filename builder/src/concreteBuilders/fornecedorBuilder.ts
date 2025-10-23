@@ -57,8 +57,9 @@ class fornecedorBuilder implements userBuilder {
     }
 
     getResult(): Fornecedor {
+        const resultado = this.fornecedor;
         this.reset();
-        return this.fornecedor;
+        return resultado;
     }
 }
 

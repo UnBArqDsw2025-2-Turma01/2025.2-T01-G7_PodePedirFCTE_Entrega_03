@@ -13,10 +13,6 @@ export class Entregador {
     private _veiculo: string = '';
     private _identificador: string = '';
 
-    constructor() {
-        console.log('🛵 Novo entregador criado!');
-    }
-
     // GETTERS - Para ler os valores
     public get username(): string {
         return this._username;
