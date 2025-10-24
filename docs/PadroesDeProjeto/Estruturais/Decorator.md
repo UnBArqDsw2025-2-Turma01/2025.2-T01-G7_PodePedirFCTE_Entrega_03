@@ -18,7 +18,7 @@ Uma abordagem mais flexível é embutir o componente em outro objeto que acresce
 
 ### Vantagens
 
-Segundo o Refactoring Guru, as principais vantagens de utilziar o padrão Decorator são:
+Segundo o Refactoring Guru, as principais vantagens de utilizar o padrão Decorator são:
 
 - Estabeleciamento de comportamentos de um objeto sem a necessidade de uma nova subclasse;
 - Adição ou remoção de responsabilidades de um objeto durante a execução;
@@ -27,10 +27,10 @@ Segundo o Refactoring Guru, as principais vantagens de utilziar o padrão Decora
 
 ### Desvantagens
 
-Segundo o Refactoring Guru, as principais desvantagens de utilziar o padrão Decorator são:
+Segundo o Refactoring Guru, as principais desvantagens de utilizar o padrão Decorator são:
 
 - Difícil implementação de um decorador de tal maneira que o comportamento não dependa da ordem da pilha de decoradores;
-- Confirguração inicial do código em camadas;
+- Configuração inicial do código em camadas;
 
 ## Aplicação no projeto
 
@@ -213,11 +213,15 @@ Segundo Gamma et al. (1995, p. 173-174), o padrão Decorator apresenta os seguin
 1. **Um decorador e seu componente não são idênticos**: Do ponto de vista da identidade de objeto, um componente decorado não é idêntico ao próprio componente
 2. **Grande quantidade de pequenos objetos**: Um projeto que usa Decorator frequentemente resulta em sistemas compostos por muitos pequenos objetos parecidos
 
+## Explicação em vídeo
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MjIkxJ9daQo?si=76BSq6G1xU01G3R7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Quadro de Participações
 
 | **Membro da equipe** | **Função** |
 | :------------- | :--------- |
-| [Ana Clara](https://github.com/anabborges) | Documentação do padrão e criação do diagrama de classes |
+| [Ana Clara](https://github.com/anabborges) | Documentação do padrão, criação do diagrama de classes e vídeo explicativo |
 | [Gabriela](https://github.com/gaubiela) | Documentação do padrão, ajustes e revisão do diagrama de classes, desenvolvimento do código demo |
 | [Rodrigo](https://github.com/rodrigoFAmaral) | Auxilio na documentação e revisão do código demo |
 
@@ -236,3 +240,4 @@ Segundo Gamma et al. (1995, p. 173-174), o padrão Decorator apresenta os seguin
 | 22/10/2025 |  `0.3`   | Inicia a documentação da aplicação no projeto | [`@Ana Clara`](https://github.com/anabborges) | [`@Gabriela`](https://github.com/gaubiela) |   23/10/2025    |
 | 23/10/2025 |  `0.4`   | Adiciona explicação completa do padrão, diagrama de classes, implementação e referências ao GoF | [`@Gabriela`](https://github.com/gaubiela) | [`@Rodrigo`](https://github.com/rodrigoFAmaral) |   23/10/2025    |
 | 23/10/2025 |  `0.5`   | Ajustes na documentação e revisão do código demo | [`@Rodrigo`](https://github.com/rodrigoFAmaral) | [`@Ana Clara`](https://github.com/anabborges) |   24/10/2025    |
+| 24/10/2025 |  `1.0`   | Adiciona vídeo explicativo | [`@Ana Clara`](https://github.com/anabborges) | [`@Rodrigo`](https://github.com/rodrigoFAmaral) |   24/10/2025    |
