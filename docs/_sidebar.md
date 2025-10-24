@@ -17,6 +17,7 @@
       - [3.2.1. Decorator](PadroesDeProjeto/Estruturais/Decorator.md)
       - [3.2.2. GoF Bridge](PadroesDeProjeto/Estruturais/3.2.2.Bridge.md)
       - [3.2.6. Flyweight](PadroesDeProjeto/Estruturais/3.2.6.Flyweight.md)
+      - [3.2.x. Proxy](PadroesDeProjeto/Estruturais/Proxy.md)
     - [3.3. Padrões de Projeto GoFs Comportamentais](PadroesDeProjeto/Comportamentais/3.3.GoFsComportamentais.md)
       - [3.3.4. Observer](PadroesDeProjeto/Comportamentais/Observer.md)
       - [3.3.1. Memento](PadroesDeProjeto/Comportamentais/3.3.1.Memento.md)
