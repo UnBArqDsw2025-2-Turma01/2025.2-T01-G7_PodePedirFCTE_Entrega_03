@@ -349,6 +349,9 @@ Durante o desenvolvimento, foram encontrados os seguintes desafios que foram sol
 
 > OBSERVER PATTERN. _In_: TUTORIALS POINT. [_s.l.: s.n._, 2013?]. Disponível em: https://www.tutorialspoint.com/design_pattern/observer_pattern.htm. Acesso em: 23 out. 2025.
 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZxD-9E6USm4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Histórico de Versões
 
 |  **Data**  | **Versão** | **Descrição**                                                                                                                    |                    **Autor**                    |                   **Revisor**                   | **Data da Revisão** |
