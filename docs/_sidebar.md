@@ -12,6 +12,7 @@
       - [3.1.4. Factory Method](PadroesDeProjeto/Criacionais/FactoryMethod.md)
       - [3.1.5. Prototype](PadroesDeProjeto/Criacionais/3.1.4.Prototype.md)
       - [3.1.6. GoF Multiton](PadroesDeProjeto/Criacionais/3.1.6.Multiton.md)
+      - [3.1.7. Object Pool](PadroesDeProjeto/Criacionais/3.1.7.ObjectPool.md)
     - [3.2. Padrões de Projeto GoFs Estruturais](PadroesDeProjeto/Estruturais/3.2.GoFsEstruturais.md)
       - [3.2.1. Composite](PadroesDeProjeto/Estruturais/3.2.1.composite.md)
       - [3.2.2. Decorator](PadroesDeProjeto/Estruturais/Decorator.md)
