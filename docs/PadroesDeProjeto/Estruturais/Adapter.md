@@ -294,7 +294,7 @@ Durante o desenvolvimento, foram encontrados os seguintes desafios que foram sol
 ## Quadro de participações
 | **Membro da equipe**   | **Função** |
 | :------------------------------------------- | :-------------------------------------------- |               
-| [Willian](https://github.com/Wooo589) | Documentação inicial, explicação do padrão, modelagem UML e codificação |
+| [Willian](https://github.com/Wooo589) | Documentação, explicação do padrão, modelagem UML e codificação |
 
 ## Referências
 
