@@ -1,0 +1,21 @@
+{
+  "name": "observer-pattern-ts",
+  "version": "1.0.0",
+  "description": "Observer pattern implementation in TypeScript",
+  "main": "dist/demo.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node src/demo.ts",
+    "watch": "tsc --watch",
+    "start": "node dist/demo.js"
+  },
+  "keywords": ["observer", "design-pattern", "typescript"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "rimraf": "^5.0.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0"
+  }
+}
