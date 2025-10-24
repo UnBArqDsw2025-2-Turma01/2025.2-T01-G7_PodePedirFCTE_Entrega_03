@@ -7,6 +7,7 @@
   - [3. Desenho de Software (Padrões de Projeto)](PadroesDeProjeto/3.PadroesDeProjeto.md)
     - [3.1. Padrões de Projeto GoFs Criacionais](PadroesDeProjeto/Criacionais/3.1.GoFsCriacionais.md)
       - [3.1.1 Abstract Factory](PadroesDeProjeto/Criacionais/3.1.1.AbstractFactory.md)
+      - [3.1.2. Factory Method](PadroesDeProjeto/Criacionais/FactoryMethod.md)
       - [3.1.4 Prototype](PadroesDeProjeto/Criacionais/3.1.4.Prototype.md)
       - [3.1.6. GoF Multiton](PadroesDeProjeto/Criacionais/3.1.6.Multiton.md)
     - [3.2. Padrões de Projeto GoFs Estruturais](PadroesDeProjeto/Estruturais/3.2.GoFsEstruturais.md)
