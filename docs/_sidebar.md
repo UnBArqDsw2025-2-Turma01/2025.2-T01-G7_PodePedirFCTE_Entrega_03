@@ -19,6 +19,7 @@
       - [3.2.3. GoF Bridge](PadroesDeProjeto/Estruturais/3.2.2.Bridge.md)
       - [3.2.4. Flyweight](PadroesDeProjeto/Estruturais/3.2.6.Flyweight.md)
       - [3.2.5. Proxy](PadroesDeProjeto/Estruturais/Proxy.md)
+      - [3.2.5. Facade](PadroesDeProjeto/Estruturais/3.2.5.Facade.md)
     - [3.3. Padrões de Projeto GoFs Comportamentais](PadroesDeProjeto/Comportamentais/3.3.GoFsComportamentais.md)
       - [3.3.1. Observer](PadroesDeProjeto/Comportamentais/Observer.md)
       - [3.3.2. Memento](PadroesDeProjeto/Comportamentais/3.3.1.Memento.md)
