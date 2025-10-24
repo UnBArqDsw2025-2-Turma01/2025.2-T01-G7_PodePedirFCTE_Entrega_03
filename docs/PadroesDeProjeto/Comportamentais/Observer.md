@@ -143,7 +143,7 @@ Esta implementação evidencia como o padrão Builder simplifica a criação de 
     <strong>Figura 1</strong> – Diagrama UML Observer cadastro de usuários no PodePedirFCTE
 </p>
 
-![Diagrama UML Observer PodePedirFCTE](/docs/assets/observer/observer.png)
+![Diagrama UML Observer PodePedirFCTE](../../assets/observer/observer.png)
 
 <p>
     <strong>Autor: autoria da equipe</strong>, 2025
