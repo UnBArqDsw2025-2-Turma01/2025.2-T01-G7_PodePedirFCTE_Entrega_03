@@ -46,7 +46,8 @@ Para a aplicação no projeto, foi decidido que ele seria utilizado no contexto 
 
 O diagrama foi criado levando em consideração o [Diagrama de Classes](https://unbarqdsw2025-2-turma01.github.io/2025.2-T01-G7_PodePedirFCTE_Entrega_02/#/./Modelagem/ModelagemEstatica/DiagramaDeClasses) feito na segunda entrega e os debates entre as integrantes responsáveis pelo padrão de projeto.
 
-<img src="../../assets/decorator/diagrama-decorator.png" alt="Diagrama Decorator" width="600" height="700">
+<!-- <img src="../../assets/decorator/diagrama-decorator.png" alt="Diagrama Decorator" width="600" height="700"> -->
+![diagrama](../../assets/decorator/diagrama-decorator.png)
 
 #### Participantes do Diagrama:
 

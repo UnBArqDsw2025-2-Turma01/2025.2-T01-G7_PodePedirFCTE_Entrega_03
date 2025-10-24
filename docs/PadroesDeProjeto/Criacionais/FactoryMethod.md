@@ -32,7 +32,8 @@ Para a aplicação no projeto, foi decidido que ele seria utilizado no contexto 
 
 O diagrama foi criado levando em consideração o [Diagrama de Classes](https://unbarqdsw2025-2-turma01.github.io/2025.2-T01-G7_PodePedirFCTE_Entrega_02/#/./Modelagem/ModelagemEstatica/DiagramaDeClasses) feito na segunda entrega e os debates entre as integrantes responsáveis pelo padrão de projeto.
 
-<img src="../../assets/factory-method/diagrama-factory-method.png" alt="Diagrama Factory Method" width="800" height="700">
+<!-- <img src="../../assets/factory-method/diagrama-factory-method.png" alt="Diagrama Factory Method" width="800" height="700"> -->
+![diagrama](../../assets/factory-method/diagrama-factory-method.png)
 
 Foram criadas duas interfaces:
 - FabricaDePedidos: feita para padronizar um método comum entre todas as Fabricas de Pedidos. Dessa forma, arquivos que chamam o método serão capazes de chamá-lo sem precisar saber qual é o tipo do pedido.
@@ -245,9 +246,12 @@ npm run demo
 
 #### Resultados da Execução do Código
 
-<img src="../../assets/factory-method/execucao-1.png" alt="Execucao codigo" width="700" height="600">
+<!-- <img src="../../assets/factory-method/execucao-1.png" alt="Execucao codigo" width="700" height="600">
 <img src="../../assets/factory-method/execucao-2.png" alt="Execucao codigo" width="700" height="600">
-<img src="../../assets/factory-method/execucao-3.png" alt="Execucao codigo" width="700" height="200">
+<img src="../../assets/factory-method/execucao-3.png" alt="Execucao codigo" width="700" height="200"> -->
+![execucao-codigo](../../assets/factory-method/execucao-1.png)
+![execucao-codigo](../../assets/factory-method/execucao-2.png)
+![execucao-codigo](../../assets/factory-method/execucao-3.png)
 
 #### Explicação do Padrão Factory Method
 
