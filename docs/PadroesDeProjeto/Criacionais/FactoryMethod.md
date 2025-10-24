@@ -257,6 +257,12 @@ npm run demo
 <img src="../../assets/factory-method/execucao-2.png" alt="Execucao codigo" width="700" height="600">
 <img src="../../assets/factory-method/execucao-3.png" alt="Execucao codigo" width="700" height="200">
 
+#### Explicação do Padrão Factory Method
+
+Para garantir uma melhor esclarecimento de como o padrão foi aplicado no desenvolvimento do projeto Pode Pedir FCTE, foi feito um vídeo contendo além da explicação o funcionamento do código desenvolvido.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DZVqyE_Rvtk?si=VioI5rfiCDJjmF57" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Quadro de Participações
 
 | **Membro da equipe** | **Função** |
@@ -272,8 +278,9 @@ npm run demo
 
 | **Data**       | **Versão** | **Descrição**                         | **Autor**                                      | **Revisor**                                      | **Data da Revisão** |
 | :--------: | :----: | :-------------------------------- | :----------------------------------------: | :----------------------------------------: | :-------------: |
-| 09/10/2025 |  `0.1`   | Criação da página e documentação da introdução, factory method e vantagens/desvantagens | [`@Ana Clara`](https://github.com/anabborges) | [`@Gabriela`](https://github.com/gaubiela) |   00/00/0000    |
-| 21/10/2025 |  `0.2`   | Adiciona foto do diagrama de classes | [`@Ana Clara`](https://github.com/anabborges) | [`@Gabriela`](https://github.com/gaubiela) |   00/00/0000    |
-| 22/10/2025 |  `0.3`   | Adiciona códigos | [`@Ana Clara`](https://github.com/anabborges) | [`@Gabriela`](https://github.com/gaubiela) |   00/00/0000    |
-| 23/10/2025 |  `0.4`   | Adiciona prints da execucao do codigo | [`@Ana Clara`](https://github.com/anabborges) | [`@Gabriela`](https://github.com/gaubiela) |   00/00/0000    |
-| 23/10/2025 |  `1.0`   | Detalhamento de classes | [`@Ana Clara`](https://github.com/anabborges) | [`@Gabriela`](https://github.com/gaubiela) |   00/00/0000    |
+| 09/10/2025 |  `0.1`   | Criação da página e documentação da introdução, factory method e vantagens/desvantagens | [`@Ana Clara`](https://github.com/anabborges) | [`@Gabriela`](https://github.com/gaubiela) |   24/10/2025    |
+| 21/10/2025 |  `0.2`   | Adiciona foto do diagrama de classes | [`@Ana Clara`](https://github.com/anabborges) | [`@Gabriela`](https://github.com/gaubiela) |   24/10/2025    |
+| 22/10/2025 |  `0.3`   | Adiciona códigos | [`@Ana Clara`](https://github.com/anabborges) | [`@Gabriela`](https://github.com/gaubiela) |   24/10/2025    |
+| 23/10/2025 |  `0.4`   | Adiciona prints da execucao do codigo | [`@Ana Clara`](https://github.com/anabborges) | [`@Gabriela`](https://github.com/gaubiela) |   24/10/2025    |
+| 23/10/2025 |  `1.0`   | Detalhamento de classes | [`@Ana Clara`](https://github.com/anabborges) | [`@Gabriela`](https://github.com/gaubiela) |   24/10/2025    |
+| 23/10/2025 |  `1.1`   | Adição de vídeo explicativo | [`@Gabriela`](https://github.com/gaubiela) | [`@Ana Clara`](https://github.com/anabborges) |   24/10/2025    |
