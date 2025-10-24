@@ -1,41 +1,43 @@
-# RepositorioTemplate
-Esse repositório é para ser utilizado pelos grupos como um template inicial.
-As seções do Template NÃO DEVEM SER OMITIDAS, sendo TODAS RELEVANTES.
-Demais diretrizes constam no Moodle.
-
-**!! Atenção: Renomeie o seu repositório para (Ano.Semestre)(Turma)_(Grupo)_(NomeDoProjeto)_(Entrega_03)*. !!** 
-
-**!! *Não coloque os nomes dos alunos no título do repositório*. !!**
-
-**!! *Exemplo de título correto: 2025.1(T01)_G1_Embarcado_Entrega_03*. !!** 
- 
- (Apague esses comentários)
-
 # Nome do Projeto
 
 **Código da Disciplina**: FGA0208<br>
-**Número do Grupo**: XX<br>
+**Número do Grupo**: 07<br>
 **Entrega**: 03<br>
 
 ## Alunos
-|Matrícula | Aluno |
+| Matrícula | Aluno |
 | -- | -- |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
+| 22/1007789 | Ana Clara Borges |
+| 21/1031566 | Ana Joyce Guedes Amorim da Silva |
+| 22/1022506 | Cayo Felipe Alencar Camara |
+| 22/2006712 | Fábio Gabriel da Silva Barbosa |
+| 21/1030756 | Gabriela Silva Alves |
+| 21/1030765 | Guilherme Storch de Oliveira |
+| 23/1035141 | João Filipe de Oliveira Souza |
+| 23/1011696 | Luiz Guilherme Morais da Costa Faria |
+| 22/2006285 | Nathan Batista Santos |
+| 23/1011810 | Rodrigo Ferreira do Amaral |
+| 23/1011865 | Willian Wagner Xavier Ramos da Silva |
 
 ## Sobre 
-Contextualize, usando referências, links, e outros materiais como fontes.
+PodePedirFCTE é um aplicativo que permite que alunos da FCTE peçam comidas de restaurantes próximos à faculdade. Ele tem como objetivo formentar o comércio local do Gama.
 
 ## Screenshots da Terceira Entrega
-Adicione 2 ou mais screenshots em termos de artefatos realizados na entrega.
+Aqui são encontrados alguns dos artefatos produzidos durante a Terceira Entrega, mais artefatos podem ser encontrados nas páginas.
+
+
 
 ## Há algo a ser executado?
 
-( ) SIM
+(X) SIM
 
 ( ) NÃO
 
-Se SIM, insira um manual (ou um script) para auxiliar ainda mais os interessados na execução.
+Os códigos executáveis são particulares de cada padrão adicionado no projeto. Na página de cada padrão há as instruções para executar o código.
 
-## Informações Complementares 
-Quaisquer outras informações adicionais podem ser descritas nessa seção.
+## Histórico de Versões
+
+
+| **Data**       | **Versão** | **Descrição**                         | **Autor**                                      | **Revisor**                                      | **Data da Revisão** |
+| :--------: | :----: | :-------------------------------- | :----------------------------------------: | :----------------------------------------: | :-------------: |
+| 24/10/2025 |  `1.0`   | Criação do documento |`@Ana Clara` | `@Ana Joyce` |  24/10/2025    |
