@@ -21,6 +21,3 @@ build/
 # OS
 .DS_Store
 Thumbs.db
-
-# Others
-package-lock.json
