@@ -148,7 +148,7 @@ Esta implementação evidencia como o padrão Builder simplifica a criação de 
     <strong>Figura 1</strong> – Diagrama UML Builder cadastro de usuários no PodePedirFCTE
 </p>
 
-![Diagrama UML Builder PodePedirFCTE](./assests/builder.png)
+![Diagrama UML Builder PodePedirFCTE](./assets/builder.png)
 
 <p>
     <strong>Autor: autoria da equipe</strong>, 2025
