@@ -6,6 +6,7 @@
 - **Padrões de Projeto**
   - [3. Desenho de Software (Padrões de Projeto)](PadroesDeProjeto/3.PadroesDeProjeto.md)
     - [3.1. Padrões de Projeto GoFs Criacionais](PadroesDeProjeto/Criacionais/3.1.GoFsCriacionais.md)
+      - [3.1.4 Prototype](PadroesDeProjeto/Criacionais/Prototype.md)
       - [3.1.6. GoF Multiton](PadroesDeProjeto/Criacionais/3.1.6.Multiton.md)
     - [3.2. Padrões de Projeto GoFs Estruturais](PadroesDeProjeto/Estruturais/3.2.GoFsEstruturais.md)
       - [3.2.2. GoF Bridge](PadroesDeProjeto/Estruturais/3.2.2.Bridge.md)
