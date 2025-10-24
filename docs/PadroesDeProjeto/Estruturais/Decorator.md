@@ -18,12 +18,16 @@ Uma abordagem mais flexível é embutir o componente em outro objeto que acresce
 
 ### Vantagens
 
+Segundo o Refactoring Guru, as principais vantagens de utilziar o padrão Decorator são:
+
 - Estabeleciamento de comportamentos de um objeto sem a necessidade de uma nova subclasse;
 - Adição ou remoção de responsabilidades de um objeto durante a execução;
 - Combinação de diversos comportamentos ao envolver o objeto com diferentes decoradores;
 - Princípio da responsabilidade única;
 
 ### Desvantagens
+
+Segundo o Refactoring Guru, as principais desvantagens de utilziar o padrão Decorator são:
 
 - Difícil implementação de um decorador de tal maneira que o comportamento não dependa da ordem da pilha de decoradores;
 - Confirguração inicial do código em camadas;
@@ -42,7 +46,7 @@ Para a aplicação no projeto, foi decidido que ele seria utilizado no contexto 
 
 O diagrama foi criado levando em consideração o [Diagrama de Classes](https://unbarqdsw2025-2-turma01.github.io/2025.2-T01-G7_PodePedirFCTE_Entrega_02/#/./Modelagem/ModelagemEstatica/DiagramaDeClasses) feito na segunda entrega e os debates entre as integrantes responsáveis pelo padrão de projeto.
 
-![Diagrama de Classes do Padrão Decorator](../../assets/decorator/diagrama-decorator.png)
+<img src="../../assets/decorator/diagrama-decorator.png" alt="Diagrama Decorator" width="600" height="700">
 
 #### Participantes do Diagrama:
 
@@ -231,4 +235,4 @@ Segundo Gamma et al. (1995, p. 173-174), o padrão Decorator apresenta os seguin
 | 22/10/2025 |  `0.2`   | Adição da introdução, vantagens e desvantagens | [`@Ana Clara`](https://github.com/anabborges) | [`@Gabriela`](https://github.com/gaubiela) |   23/10/2025    |
 | 22/10/2025 |  `0.3`   | Inicia a documentação da aplicação no projeto | [`@Ana Clara`](https://github.com/anabborges) | [`@Gabriela`](https://github.com/gaubiela) |   23/10/2025    |
 | 23/10/2025 |  `0.4`   | Adiciona explicação completa do padrão, diagrama de classes, implementação e referências ao GoF | [`@Gabriela`](https://github.com/gaubiela) | [`@Rodrigo`](https://github.com/rodrigoFAmaral) |   23/10/2025    |
-| 23/10/2025 |  `0.5`   | Ajustes na documentação e revisão do código demo | [`@Rodrigo`](https://github.com/rodrigoFAmaral) | [`@`](https://github.com/) |   24/10/2025    |
+| 23/10/2025 |  `0.5`   | Ajustes na documentação e revisão do código demo | [`@Rodrigo`](https://github.com/rodrigoFAmaral) | [`@Ana Clara`](https://github.com/anabborges) |   24/10/2025    |
