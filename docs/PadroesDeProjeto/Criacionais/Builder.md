@@ -53,8 +53,6 @@ A implementação do padrão Builder no **PodePedirFCTE** foi desenvolvida para 
 
 ### Estrutura da Implementação
 
-A aplicação do padrão segue fielmente a estrutura clássica definida na literatura, adaptada para o contexto específico do sistema:
-
 #### **1. Builder Interface (`userBuilder`)**
 
 ```typescript
