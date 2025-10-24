@@ -39,8 +39,12 @@
 | 5 | Foco nos GOFs criacionais | Para essa semana, do dia 29 de setembro, será dedicado um foco maior na elaboração dos GOFs criacionais. | [Ana Clara](https://github.com/anabborges), [Ana Joyce](https://github.com/anajoyceamorim), [Cayo](https://github.com/Cayoalencar), [Fábio](https://github.com/fabinsz), [Gabriela](https://github.com/gaubiela), [Guilherme](https://github.com/storch7), [João Filipe](https://github.com/Joao151104), [Luiz](https://github.com/luizfaria1989), [Nathan](https://github.com/Nathan-bs), [Rodrigo](https://github.com/rodrigoFAmaral) e [Willian](https://github.com/Wooo589) | Feito |
 | 6 | Decisão da linguagem | Será feita uma enquete no grupo para decidir a linguagem a ser utilizada para o desenvolvimento dos códigos dos GOFs | [Ana Clara](https://github.com/anabborges) | Em desenvolvimento |
 
+## Gravação da Reunião
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Amzfj9Y6sew?si=8SQ2WyPJmF-l4kwm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Histórico de Versões
 
 | **Data**       | **Versão** | **Descrição**                         | **Autor**                                      | **Revisor**                                      | **Data da Revisão** |
 | :--------: | :----: | :-------------------------------- | :----------------------------------------: | :----------------------------------------: | :-------------: |
-| 20/10/2025 |  `1.0`   | Criação do documento | [`@Luiz`](https://github.com/luizfaria1989) |  |   00/00/2025    |
+| 20/10/2025 |  `1.0`   | Criação do documento | [`@Luiz`](https://github.com/luizfaria1989) | [`@Ana Clara`](https://github.com/anabborges)  |   24/10/2025    |
