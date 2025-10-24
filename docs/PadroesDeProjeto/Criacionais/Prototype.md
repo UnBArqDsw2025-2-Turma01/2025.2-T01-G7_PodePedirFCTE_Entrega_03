@@ -219,5 +219,5 @@ https://refactoring.guru/design-patterns/prototype
 
 | **Data**       | **Versão** | **Descrição**                         | **Autor**                                      | **Revisor**                                      | **Data da Revisão** |
 | :--------: | :----: | :-------------------------------- | :----------------------------------------: | :----------------------------------------: | :-------------: |
-| 19/10/2025 |  `0.1`   | Criação da Página e Documentação inicial | [`@Fábio`](https://github.com/fabinsz) | [`@`](https://github.com/) |   00/00/0000    |
-| 22/10/2025 |  `0.2`   | Implementação do Prototype | [`@Fábio`](https://github.com/fabinsz) | [`@`](https://github.com/) |   00/00/0000    |
+| 19/10/2025 |  `0.1`   | Criação da Página e Documentação inicial | [`@Fábio`](https://github.com/fabinsz) | [`@Ana Joyce`](https://github.com/anajoyceamorim) |   24/10/2025    |
+| 22/10/2025 |  `0.2`   | Implementação do Prototype | [`@Fábio`](https://github.com/fabinsz) | [`@Ana Joyce`](https://github.com/anajoyceamorim) |   24/10/2025    |
