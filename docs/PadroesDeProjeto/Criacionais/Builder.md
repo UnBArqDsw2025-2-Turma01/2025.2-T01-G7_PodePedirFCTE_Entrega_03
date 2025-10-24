@@ -345,6 +345,9 @@ Durante o desenvolvimento, alguns desafios técnicos foram identificados e soluc
 
 > GAMMA, Erich _et al._ **Design Patterns**: elements of reusable object-oriented software. Boston, MA: Addison-Wesley, 1994.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4e7XPF3nKtw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 ## Histórico de Versões
 
 |  **Data**  | **Versão** | **Descrição**                                                                                                          |                    **Autor**                    |                   **Revisor**                   | **Data da Revisão** |
