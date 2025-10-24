@@ -11,6 +11,7 @@
       - [3.1.6. GoF Multiton](PadroesDeProjeto/Criacionais/3.1.6.Multiton.md)
     - [3.2. Padrões de Projeto GoFs Estruturais](PadroesDeProjeto/Estruturais/3.2.GoFsEstruturais.md)
       - [3.2.2. GoF Bridge](PadroesDeProjeto/Estruturais/3.2.2.Bridge.md)
+      - [3.2.6. Flyweight](PadroesDeProjeto/Estruturais/3.2.6.Flyweight.md)
     - [3.3. Padrões de Projeto GoFs Comportamentais](PadroesDeProjeto/Comportamentais/3.3.GoFsComportamentais.md)
       - [3.3.1. GoF Command](PadroesDeProjeto/Comportamentais/3.3.1.Command.md)
       - [3.3.6. GoF Strategy](PadroesDeProjeto/Comportamentais/3.3.6.Strategy.md)
