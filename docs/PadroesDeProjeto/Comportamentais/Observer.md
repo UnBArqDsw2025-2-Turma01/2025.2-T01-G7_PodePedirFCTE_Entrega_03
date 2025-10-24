@@ -135,17 +135,21 @@ const fornecedor = fornecedorBuilder.getResult();
 
 Esta implementação evidencia como o padrão Builder simplifica a criação de objetos complexos no contexto do **PodePedirFCTE**, proporcionando um código mais limpo, organizando e manutenível.
 
+-->
+
 ### Modelagem
 
 <p style="text-align: center">
-    <strong>Figura 1</strong> – Diagrama UML Builder cadastro de usuários no PodePedirFCTE
+    <strong>Figura 1</strong> – Diagrama UML Observer cadastro de usuários no PodePedirFCTE
 </p>
 
-![Diagrama UML Builder PodePedirFCTE](./assests/builder.png)
+![Diagrama UML Observer PodePedirFCTE](/docs/assets/observer/observer.png)
 
 <p>
     <strong>Autor: autoria da equipe</strong>, 2025
 </p>
+
+<!--
 
 ### Implementação
 
