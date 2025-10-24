@@ -1,5 +1,6 @@
 import { Observer } from "./observer";
 import { Subject } from "../subject";
+
 export class fornecedorObserver extends Observer {
     constructor(subject: Subject) {
         super(subject);

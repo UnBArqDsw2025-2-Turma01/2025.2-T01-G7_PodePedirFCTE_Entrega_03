@@ -1,6 +1,7 @@
 import { Observer } from "./observer";
 import { Subject } from "../subject";
-export class AlunoObserver extends Observer {
+
+export class alunoObserver extends Observer {
     constructor(subject: Subject) {
         super(subject);
         this.subject = subject;
