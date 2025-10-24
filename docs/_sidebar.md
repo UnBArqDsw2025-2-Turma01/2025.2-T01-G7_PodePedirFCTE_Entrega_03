@@ -14,6 +14,7 @@
       - [3.2.6. Flyweight](PadroesDeProjeto/Estruturais/3.2.6.Flyweight.md)
     - [3.3. Padrões de Projeto GoFs Comportamentais](PadroesDeProjeto/Comportamentais/3.3.GoFsComportamentais.md)
       - [3.3.1. GoF Command](PadroesDeProjeto/Comportamentais/3.3.1.Command.md)
+      - [3.3.2. Iterator](PadroesDeProjeto/Comportamentais/3.3.2.Iterator.md)
       - [3.3.6. GoF Strategy](PadroesDeProjeto/Comportamentais/3.3.6.Strategy.md)
       - [3.3.10 Chain of Responsibility](PadroesDeProjeto/Comportamentais/3.3.10ChainOfResponsibility.md)
     - [3.4. Participações - Padrões de Projeto](PadroesDeProjeto/3.4.ParticipacoesPadroes.md)
