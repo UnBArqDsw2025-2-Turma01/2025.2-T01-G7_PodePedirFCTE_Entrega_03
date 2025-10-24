@@ -38,8 +38,12 @@
 | 4 | Desenvolviment do back-end | Será utilizado node.js para o desenvolvimento do back-end. | [Ana Clara](https://github.com/anabborges), [Ana Joyce](https://github.com/anajoyceamorim), [Cayo](https://github.com/Cayoalencar), [Fábio](https://github.com/fabinsz), [Gabriela](https://github.com/gaubiela), [Guilherme](https://github.com/storch7), [João Filipe](https://github.com/Joao151104), [Luiz](https://github.com/luizfaria1989), [Nathan](https://github.com/Nathan-bs), [Rodrigo](https://github.com/rodrigoFAmaral) e [Willian](https://github.com/Wooo589) | Em desenvolvimento |
 | 5 | Desenvolvimento do front-end | Será utilizado react para o desenvolvimento do front-end. | [Ana Clara](https://github.com/anabborges), [Ana Joyce](https://github.com/anajoyceamorim), [Cayo](https://github.com/Cayoalencar), [Fábio](https://github.com/fabinsz), [Gabriela](https://github.com/gaubiela), [Guilherme](https://github.com/storch7), [João Filipe](https://github.com/Joao151104), [Luiz](https://github.com/luizfaria1989), [Nathan](https://github.com/Nathan-bs), [Rodrigo](https://github.com/rodrigoFAmaral) e [Willian](https://github.com/Wooo589) | Em desenvolvimento |
 
+## Gravação da Reunião
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZFIFoFjqqz0?si=SEIHwIqNLn19nIni" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Histórico de Versões
 
 | **Data**       | **Versão** | **Descrição**                         | **Autor**                                      | **Revisor**                                      | **Data da Revisão** |
 | :--------: | :----: | :-------------------------------- | :----------------------------------------: | :----------------------------------------: | :-------------: |
-| 20/10/2025 |  `1.0`   | Criação do documento | [`@Luiz`](https://github.com/luizfaria1989) |  |   00/00/2025    |
+| 20/10/2025 |  `1.0`   | Criação do documento | [`@Luiz`](https://github.com/luizfaria1989) | [`@Ana Clara`](https://github.com/anabborges) |   24/10/2025    |
