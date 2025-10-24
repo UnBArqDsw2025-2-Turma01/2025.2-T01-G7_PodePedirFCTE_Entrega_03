@@ -2,7 +2,7 @@
 
 ## Introdução
 
-Este documento explica o padrão de projeto comportamental Observer e apresenta a sua aplicação no **PodePedirFCTE**, desenvolvida com base no diagrama de xx elaborado, a partir do qual foram construídas a modelagem e a implementação do padrão.
+Este documento explica o padrão de projeto comportamental Observer e apresenta a sua aplicação no **PodePedirFCTE**, desenvolvida com base no diagrama de sequência elaborado pela equipe, a partir do qual foram construídas a modelagem e a implementação do padrão.
 
 ## Explicação
 
@@ -14,14 +14,14 @@ Conforme Gamma et al.(1994), o padrão comportamental Observer estabelece uma re
 
 ### Estrutura e interações
 
-O padrão é constituído por quatro componentes fundamentais, cuja interação se dá por meio de comunicações específicas entre o sujeito e seus observadores, sendo estruturado em duas interfaces e duas classes (GAMMA et al., 1994).
+O padrão é constituído por quatro componentes fundamentais, cuja interação se dá por meio de comunicações específicas entre o sujeito e seus observadores (GAMMA et al., 1994).
 
 | **Elemento**       | **Descrição**                                                                                                                                             |
 | :----------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| _Subject_          | Interface responsável por gerenciar os observadores, pois oferece métodos para registrá-los e removê-los conforme necessário.                             |
-| _Observer_         | Interface que define o contrato de atualização a ser seguido pelos objetos que devem ser notificados sobre alterações no sujeito.                         |
-| _ConcreteSubject_  | Classe que implementa o Subject e armazena o estado de interesse, além de enviar notificações aos observadores sempre que ocorre uma mudança relevante.   |
-| _ConcreteObserver_ | Classe que forja o Observer, mantém uma referência ao ConcreteSubject e atualiza o próprio estado para permanecer consistente com o do sujeito observado. |
+| _Subject_          | Responsável por gerenciar os observadores, pois oferece métodos para registrá-los e removê-los conforme necessário.                             |
+| _Observer_         | Define o contrato de atualização a ser seguido pelos objetos que devem ser notificados sobre alterações no sujeito.                         |
+| _ConcreteSubject_  | Implementa o Subject e armazena o estado de interesse, além de enviar notificações aos observadores sempre que ocorre uma mudança relevante.   |
+| _ConcreteObserver_ | Forja o Observer, mantém uma referência ao ConcreteSubject e atualiza o próprio estado para permanecer consistente com o do sujeito observado. |
 
 O fluxo de comunicação entre esses elementos ocorre da seguinte forma:
 
@@ -44,7 +44,9 @@ Em contrapartida, a desvantagem observada é que os observadores são notificado
 
 ## Aplicação no projeto
 
-A implementação do padrão Observer no **PodePedirFCTE**
+No que se refere ao processo de análise de informações para confecção do artefato, foram levados em consideração os seguintes pontos da segunda entrega:
+
+- [Diagrama de sequência](https://unbarqdsw2025-2-turma01.github.io/2025.2-T01-G7_PodePedirFCTE_Entrega_02/#/Modelagem/ModelagemDinamica/DiagramaDeSequencia);
 
 [foi desenvolvida para facilitar a criação de diferentes tipos de usuários no sistema de delivery: **Aluno**, **Entregador** e **Fornecedor**. O padrão foi aplicado utilizando **TypeScript** como linguagem de programação, aproveitando recursos de tipagem estática e orientação a objetos para garantir robustez e manutenibilidade do código.]: #
 
@@ -177,15 +179,16 @@ Esta implementação demonstra como o padrão Observer facilita a comunicação 
 
 ### Modelagem
 
-<p style="text-align: center">
-    <strong>Figura 1</strong> – Diagrama UML Observer cadastro de usuários no PodePedirFCTE
-</p>
+<div align="center">
 
-![Diagrama UML Observer PodePedirFCTE](../../assets/observer/observer.png)
+**Figura 1** – Diagrama UML Observer cadastro de usuários no PodePedirFCTE  
 
-<p>
-    <strong>Autor: autoria da equipe</strong>, 2025
-</p>
+![Diagrama UML Observer PodePedirFCTE](../../assets/observer/observer.png)  
+
+**Autor: [`@Rodrigo`](https://github.com/rodrigoFAmaral)**, 2025
+
+</div>
+
 
 ### Implementação
 
@@ -327,21 +330,24 @@ Esta saída confirma que o padrão Observer foi implementado corretamente, demon
 
 Durante o desenvolvimento, foram encontrados os seguintes desafios que foram solucionados:
 
-[**1. Tipagem Dinâmica vs. Tipagem Estática**: O maior desafio foi conciliar a flexibilidade necessária para acessar métodos específicos de cada builder com a rigidez da tipagem TypeScript. A solução encontrada foi utilizar verificação de tipos em tempo de execução (`"setNome" in this.builder`) combinada com type casting (`this.builder as any`).]: #
-[**2. Gestão de Estado dos Builders**: descrição]: #
+**1. Entender o funcionamento do padrão em Java para TypesScript**: Como as fontes utilizadas para pesquisa utilizavam Java na implementação, houve um tempo há mais para a elaboração da implementação do código. Como solução, nós encontramos uma seção do Refactoring.Guru que auxiliou no entendimento da construção do código em TypeScript.
 
 ## Quadro de participações
 
 | **Membro da equipe**                         | **Função**                                  |
 | :------------------------------------------- | :------------------------------------------ |
-| [Rodrigo](https://github.com/rodrigoFAmaral) | Criação do UML e codificação                |
-| [Willian](https://github.com/Wooo589)        | Documentação inicial e explicação do padrão |
+| [Rodrigo](https://github.com/rodrigoFAmaral) | Criação do diagrama, metade da codificação e documentação da implementação           |
+| [Willian](https://github.com/Wooo589)        | Documentação inicial, explicação do padrão e metade da codificação |
 
 ## Referências
 
+> GAMMA, Erich _et al._ **Design Patterns**: elements of reusable object-oriented software. Boston, MA: Addison-Wesley, 1994.
+
 > OBSERVER. _In_: REFACTORING.GURU. [_s.l.: s.n._, 2019?]. Disponível em: https://refactoring.guru/design-patterns/observer. Acesso em: 21 out. 2025.
 
-> GAMMA, Erich _et al._ **Design Patterns**: elements of reusable object-oriented software. Boston, MA: Addison-Wesley, 1994.
+> OBSERVER IN TYPESCRIPT. _In_: REFACTORING.GURU. [_s.l.: s.n._, 2020?]. Disponível em: https://refactoring.guru/design-patterns/observer/typescript/example. Acesso em: 23 out. 2025.
+
+> OBSERVER PATTERN. _In_: TUTORIALS POINT. [_s.l.: s.n._, 2013?]. Disponível em: https://www.tutorialspoint.com/design_pattern/observer_pattern.htm. Acesso em: 23 out. 2025.
 
 ## Histórico de Versões
 
@@ -350,4 +356,4 @@ Durante o desenvolvimento, foram encontrados os seguintes desafios que foram sol
 | 21/10/2025 |   `0.1`    | Adicionar estrutura inicial da página, introdução e explicação                                                                   |    [`@Willian`](https://github.com/Wooo589)     | [`@Rodrigo`](https://github.com/rodrigoFAmaral) |     22/10/2025      |
 | 22/10/2025 |   `0.2`    | Adicionar estrutura para documentação da aplicação no projeto                                                                    |    [`@Willian`](https://github.com/Wooo589)     | [`@Rodrigo`](https://github.com/rodrigoFAmaral) |     22/10/2025      |
 | 23/10/2025 |   `0.3`    | Implementação do padrão Observer               | [`@Rodrigo`](https://github.com/rodrigoFAmaral)  [`@Willian`](https://github.com/Wooo589) |    [`@Willian`](https://github.com/Wooo589)  [`@Rodrigo`](https://github.com/rodrigoFAmaral)   |     23/10/2025      |
-| 23/10/2025 |   `0.4`    | Adição da seção Estrutura da Implementação      | [`@Rodrigo`](https://github.com/rodrigoFAmaral)  |    [`@Willian`](https://github.com/Wooo589)   |     23/10/2025      |
+| 23/10/2025 |   `0.4`    | Adição da seção Estrutura da implementação      | [`@Rodrigo`](https://github.com/rodrigoFAmaral)  |    [`@Willian`](https://github.com/Wooo589)   |     23/10/2025      |
