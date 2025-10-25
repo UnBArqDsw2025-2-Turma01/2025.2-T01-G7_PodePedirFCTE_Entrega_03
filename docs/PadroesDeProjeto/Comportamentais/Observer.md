@@ -44,11 +44,25 @@ Em contrapartida, a desvantagem observada é que os observadores são notificado
 
 ## Aplicação no projeto
 
+A aplicação do padrão Observer no **PodePedirFCTE** envolveu a sua modelagem UML e implementação de sua codificação a partir dessa modelagem. 
+
+### Modelagem
+
 No que se refere ao processo de análise de informações para confecção do artefato, foram levados em consideração os seguintes pontos da segunda entrega:
 
 - [Diagrama de sequência](https://unbarqdsw2025-2-turma01.github.io/2025.2-T01-G7_PodePedirFCTE_Entrega_02/#/Modelagem/ModelagemDinamica/DiagramaDeSequencia);
 
-[foi desenvolvida para facilitar a criação de diferentes tipos de usuários no sistema de delivery: **Aluno**, **Entregador** e **Fornecedor**. O padrão foi aplicado utilizando **TypeScript** como linguagem de programação, aproveitando recursos de tipagem estática e orientação a objetos para garantir robustez e manutenibilidade do código.]: #
+A figura 1 abaixo representa o diagrama que modela o padrão Observer. 
+
+<div align="center">
+
+**Figura 1** – Diagrama UML Observer cadastro de usuários no PodePedirFCTE  
+
+![Diagrama UML Observer PodePedirFCTE](../../assets/observer/observer.png)  
+
+**Autor: [`@Rodrigo`](https://github.com/rodrigoFAmaral)**, 2025
+
+</div>
 
 ### Estrutura da implementação
 
@@ -176,19 +190,6 @@ sistemaPedidos.setState(3); // Pronto
 ```
 
 Esta implementação demonstra como o padrão Observer facilita a comunicação entre diferentes participantes no sistema **PodePedirFCTE**, garantindo que todos recebam informações relevantes e atualizadas sobre o status das entregas.
-
-### Modelagem
-
-<div align="center">
-
-**Figura 1** – Diagrama UML Observer cadastro de usuários no PodePedirFCTE  
-
-![Diagrama UML Observer PodePedirFCTE](../../assets/observer/observer.png)  
-
-**Autor: [`@Rodrigo`](https://github.com/rodrigoFAmaral)**, 2025
-
-</div>
-
 
 ### Implementação
 
@@ -360,3 +361,4 @@ Durante o desenvolvimento, foram encontrados os seguintes desafios que foram sol
 | 22/10/2025 |   `0.2`    | Adicionar estrutura para documentação da aplicação no projeto                                                                    |    [`@Willian`](https://github.com/Wooo589)     | [`@Rodrigo`](https://github.com/rodrigoFAmaral) |     22/10/2025      |
 | 23/10/2025 |   `0.3`    | Implementação do padrão Observer               | [`@Rodrigo`](https://github.com/rodrigoFAmaral)  [`@Willian`](https://github.com/Wooo589) |    [`@Willian`](https://github.com/Wooo589)  [`@Rodrigo`](https://github.com/rodrigoFAmaral)   |     23/10/2025      |
 | 23/10/2025 |   `0.4`    | Adição da seção Estrutura da implementação      | [`@Rodrigo`](https://github.com/rodrigoFAmaral)  |    [`@Willian`](https://github.com/Wooo589)   |     23/10/2025      |
+| 24/10/2025 |   `1.0`    | Adicionar documentação final da seção      | [`@Willian`](https://github.com/Wooo589)  |    [`@Rodrigo`](https://github.com/rodrigoFAmaral)   |     24/10/2025      |

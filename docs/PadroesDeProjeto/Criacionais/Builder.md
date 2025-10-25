@@ -14,14 +14,14 @@ O padrão criacional Builder surgiu com a intenção de separar o processo de co
 
 ### Estrutura e interações
 
-De acordo com Gamma et al. (1994), o padrão é estruturado em quatro elementos principais e em suas interações típicas com o cliente, sendo esses elementos compostos por uma interface e três classes.
+De acordo com Gamma et al. (1994), o padrão é estruturado em quatro elementos principais e realiza interações típicas com o cliente.
 
 | **Elemento**      | **Descrição**                                                                                                                              |
 | :---------------- | :----------------------------------------------------------------------------------------------------------------------------------------- |
-| _Builder_         | Interface que estabelece o conjunto de operações necessárias para montar as partes que formam um objeto do tipo Product.                   |
-| _ConcreteBuilder_ | Classe encarregada de implementar as operações definidas por Builder, por intermédio da criação de variações específicas do produto final. |
-| _Director_        | Classe que conduz o processo de construção e define a sequência e a forma de execução dos métodos do Builder.                              |
-| _Product_         | Classe que representa o resultado final do processo, composto pela combinação estruturada dos elementos gerados durante a construção.      |
+| _Builder_         | Estabelece o conjunto de operações necessárias para montar as partes que formam um objeto do tipo Product.                   |
+| _ConcreteBuilder_ | Implementa as operações definidas por Builder, por intermédio da criação de variações específicas do produto final. |
+| _Director_        | Conduz o processo de construção e define a sequência e a forma de execução dos métodos do Builder.                              |
+| _Product_         | Representa o resultado final do processo, composto pela combinação estruturada dos elementos gerados durante a construção.      |
 
 A ordem das interações segue a seguinte lógica:
 
@@ -50,6 +50,24 @@ Por outro lado, a principal desvantagem reconhecida é o aumento da complexidade
 ## Aplicação no projeto
 
 A implementação do padrão Builder no **PodePedirFCTE** foi desenvolvida para facilitar a criação de diferentes tipos de usuários no sistema de delivery: **Aluno**, **Entregador** e **Fornecedor**. O padrão foi aplicado utilizando **TypeScript** como linguagem de programação, aproveitando recursos de tipagem estática e orientação a objetos para garantir robustez e manutenibilidade do código.
+
+### Modelagem
+
+No que se refere ao processo de análise de informações para confecção do artefato, foram levados em consideração os seguintes pontos da segunda entrega:
+
+- [Diagrama de classes](https://unbarqdsw2025-2-turma01.github.io/2025.2-T01-G7_PodePedirFCTE_Entrega_02/#/./Modelagem/ModelagemEstatica/DiagramaDeClasses):
+
+A figura 1 abaixo representa o diagrama que modela o padrão Builder. 
+
+<div align="center">
+
+**Figura 1** – Diagrama UML Builder cadastro de usuários no PodePedirFCTE 
+
+![Diagrama UML Builder PodePedirFCTE](./assets/builder.png)
+
+**Autor: [`@Rodrigo`](https://github.com/rodrigoFAmaral)**, 2025
+
+</div>
 
 ### Estrutura da Implementação
 
@@ -141,18 +159,6 @@ const fornecedor = fornecedorBuilder.getResult();
 ```
 
 Esta implementação evidencia como o padrão Builder simplifica a criação de objetos complexos no contexto do **PodePedirFCTE**, proporcionando um código mais limpo, organizando e manutenível.
-
-### Modelagem
-
-<p style="text-align: center">
-    <strong>Figura 1</strong> – Diagrama UML Builder cadastro de usuários no PodePedirFCTE
-</p>
-
-![Diagrama UML Builder PodePedirFCTE](./assets/builder.png)
-
-<p>
-    <strong>Autor: autoria da equipe</strong>, 2025
-</p>
 
 ### Implementação
 
