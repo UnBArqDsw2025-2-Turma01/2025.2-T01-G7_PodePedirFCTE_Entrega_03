@@ -27,6 +27,7 @@
       - [3.3.3. GoF Command](PadroesDeProjeto/Comportamentais/3.3.1.Command.md)
       - [3.3.4. GoF Strategy](PadroesDeProjeto/Comportamentais/3.3.6.Strategy.md)
       - [3.3.5. Chain of Responsibility](PadroesDeProjeto/Comportamentais/3.3.10ChainOfResponsibility.md)
+      - [3.3.6. Iterator](PadroesDeProjeto/Comportamentais/3.3.2.Iterator.md)
     - [3.4. Participações - Padrões de Projeto](PadroesDeProjeto/3.4.ParticipacoesPadroes.md)
     - [3.5. Iniciativas Extras - Padrões de Projeto](PadroesDeProjeto/3.5.IniciativasExtras.md)
       - 3.5.1 Atas de Reunião
